@@ -9,7 +9,7 @@
     "build:sass": "sass ./sass/style.scss ./theme/style.css --no-source-map",
     "watch:webpack": "webpack --watch --mode development",
     "watch:sass": "sass ./sass/style.scss ./theme/style.css --watch --no-source-map",
-    "watch:bs": "browser-sync start --proxy ta.test --https --watch --no-notify --files 'theme' 'views'",
+    "watch:bs": "browser-sync start --proxy nd.test --https --watch --no-notify --files 'theme' 'views'",
     "start": "cross-env NODE_ENV=dev run-p watch:*",
     "build": "cross-env NODE_ENV=production run-s build:*"
   },

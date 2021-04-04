@@ -1,0 +1,32 @@
+.mk-toolbar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: black;
+    color: white;
+    font-family: Lucida Console, monospace;
+    padding: .5rem;
+    font-size: .85rem;
+    border-radius: 2px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 100ms;
+    z-index: 10000;
+    &.active {
+        opacity: 1;
+    }
+    p {
+        margin-bottom: .1em;
+    }
+    em {
+        font-style: normal;
+    }
+    span {
+        font-weight: bold;
+    }
+    h2 {
+        color: gray;
+        font-size: .7rem;
+        margin-bottom: .2em;
+    }
+}
