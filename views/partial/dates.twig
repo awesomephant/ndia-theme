@@ -1,0 +1,15 @@
+{% set y1 = dates.start | date("Y")%}
+{% set y2 = dates.end | date("Y")%}
+
+{% set m1 = dates.start | date("F")%}
+{% set m2 = dates.end | date("F")%}
+
+{% if y1 == y2 %}
+{% if m1 == m2 %}
+<span>{{dates.start | date("d")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+{% else %}
+<span>{{dates.start | date("d F")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+{% endif %}
+{% else %}
+<span>{{dates.start | date("d F Y")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+{% endif %}

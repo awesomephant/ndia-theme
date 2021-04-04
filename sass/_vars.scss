@@ -1,0 +1,34 @@
+@mixin bp($point) {
+  @if $point==xl {
+    @media (min-width: 1850px) {
+      @content;
+    }
+  } @else if $point==l {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $point==m {
+    @media (min-width: 800px) {
+      @content;
+    }
+  } @else if $point==s {
+    @media (min-width: 500px) {
+      @content;
+    }
+  } @else if $point==landscape {
+    @media (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+$black: #000000;
+$fast: 150ms;
+
+%bodycopy {
+}
+
+:root {
+  --ratio: 1.2;
+  --ms-0: clamp(1rem, calc(1.3vw + 0.2rem), 1.24rem);
+}

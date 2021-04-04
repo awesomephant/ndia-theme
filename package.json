@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:webpack": "webpack --mode production",
+    "build:sass": "sass ./sass/style.scss ./theme/style.css --no-source-map",
+    "watch:webpack": "webpack --watch --mode development",
+    "watch:sass": "sass ./sass/style.scss ./theme/style.css --watch --no-source-map",
+    "watch:bs": "browser-sync start --proxy ta.test --https --watch --no-notify --files 'theme' 'views'",
+    "start": "cross-env NODE_ENV=dev run-p watch:*",
+    "build": "cross-env NODE_ENV=production run-s build:*"
+  },
+  "author": "Max Kohler",
+  "license": "ISC",
+  "homepage": "/",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.29.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
