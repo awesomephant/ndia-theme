@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Timber starter-theme
  * https://github.com/timber/starter-theme
@@ -8,110 +9,97 @@
  * @since   Timber 0.1
  */
 
-/**
- * If you are installing Timber as a Composer dependency in your theme, you'll need this block
- * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
- * plug-in, you can safely delete this block.
- */
-$composer_autoload = dirname( __DIR__ ) . '/vendor/autoload.php';
-if ( file_exists( $composer_autoload ) ) {
-	require_once $composer_autoload;
-	$timber = new Timber\Timber();
-}
-
-/**
- * This ensures that Timber is loaded and available as a PHP class.
- * If not, it gives an error message to help direct developers on where to activate
- */
-if ( ! class_exists( 'Timber' ) ) {
+if (!class_exists('Timber')) {
 
 	add_action(
 		'admin_notices',
-		function() {
-			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+		function () {
+			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url(admin_url('plugins.php#timber')) . '">' . esc_url(admin_url('plugins.php')) . '</a></p></div>';
 		}
 	);
 
 	add_filter(
 		'template_include',
-		function( $template ) {
-			return dirname( get_stylesheet_directory() ) . '/static/no-timber.html';
+		function ($template) {
+			return dirname(get_stylesheet_directory()) . '/static/no-timber.html';
 		}
 	);
 	return;
 }
 
-/**
- * Sets the directories (inside your theme) to find .twig files
- */
-Timber::$dirname = array( '../views' );
-
-/**
- * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
- * No prob! Just set this value to true
- */
+Timber::$dirname = array('../views');
 Timber::$autoescape = false;
 
+function mk_add_custom_post_counts()
+{
+	$post_types = array('person', "event");
+	foreach ($post_types as $pt) :
+		$pt_info = get_post_type_object($pt);
+		$num_posts = wp_count_posts($pt);
+		$num = number_format_i18n($num_posts->publish);
+		$text = _n($pt_info->labels->singular_name, $pt_info->labels->name, intval($num_posts->publish)); // singular/plural text label for CPT
+		echo '<li class="page-count ' . $pt_info->name . '-count"><a href="edit.php?post_type=' . $pt . '">' . $num . ' ' . $text . '</a></li>';
+	endforeach;
+}
 
-/**
- * We're going to configure our theme inside of a subclass of Timber\Site
- * You can move this to its own file and include here via php's include("MySite.php")
- */
-class StarterSite extends Timber\Site {
+function mk_remove_wp_css()
+{
+	wp_deregister_style('wp-block-library');
+	wp_deregister_script('jquery');
+	wp_deregister_script('devicepx');
+}
+
+class NDIASite extends Timber\Site
+{
 	/** Add timber support. */
-	public function __construct() {
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
-		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+	public function __construct()
+	{
+		add_action('after_setup_theme', array($this, 'theme_supports'));
+		add_filter('timber/context', array($this, 'add_to_context'));
+		add_filter('timber/twig', array($this, 'add_to_twig'));
+		add_action('init', array($this, 'register_post_types'));
+		add_action('init', array($this, 'register_taxonomies'));
+
+		add_action('wp_print_styles', 'mk_remove_wp_css');
+		add_action('dashboard_glance_items', 'mk_add_custom_post_counts');
+		remove_action('wp_head', 'print_emoji_detection_script', 7);
+		remove_action('wp_print_styles', 'print_emoji_styles');
+
 		parent::__construct();
 	}
-	/** This is where you can register custom post types. */
-	public function register_post_types() {
-
+	public function register_post_types()
+	{
 	}
-	/** This is where you can register custom taxonomies. */
-	public function register_taxonomies() {
-
+	public function register_taxonomies()
+	{
 	}
 
-	/** This is where you add some context
-	 *
-	 * @param string $context context['this'] Being the Twig's {{ this }}.
-	 */
-	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
+	public function add_to_context($context)
+	{
+		$eventArgs = array(
+			'post_type' => 'event',
+			'post_status' => 'publish',
+			'meta_key' => 'start',
+			'orderby' => 'meta_value_datetime'
+		);
+		$resourceArgs = array(
+			'post_type' => 'resource',
+			'post_status' => 'publish',
+		);
+
+		$context['events'] = Timber::get_posts($eventArgs);
+		$context['resources'] = Timber::get_posts($resourceArgs);
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+
 		return $context;
 	}
 
-	public function theme_supports() {
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
+	public function theme_supports()
+	{
+		add_theme_support('automatic-feed-links');
+		add_theme_support('title-tag');
+		add_theme_support('post-thumbnails');
 		add_theme_support(
 			'html5',
 			array(
@@ -121,47 +109,14 @@ class StarterSite extends Timber\Site {
 				'caption',
 			)
 		);
-
-		/*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'audio',
-			)
-		);
-
-		add_theme_support( 'menus' );
+		add_theme_support('menus');
 	}
 
-	/** This Would return 'foo bar!'.
-	 *
-	 * @param string $text being 'foo', then returned 'foo bar!'.
-	 */
-	public function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
-	}
-
-	/** This is where you can add your own functions to twig.
-	 *
-	 * @param string $twig get extension.
-	 */
-	public function add_to_twig( $twig ) {
-		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+	public function add_to_twig($twig)
+	{
+		$twig->addExtension(new Twig\Extension\StringLoaderExtension());
 		return $twig;
 	}
-
 }
 
-new StarterSite();
+new NDIASite();

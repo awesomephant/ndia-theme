@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="page">
+	<h2>{{post.title}}</h2>
+	<ul class="events">
+		{% for e in events %}
+		<li class="events__item">
+			<h3><a href="{{e.link}}">{{e.title}}</a></h3>
+		</li>
+		{% endfor %}
+	</ul>
+</article>
+{% endblock %}

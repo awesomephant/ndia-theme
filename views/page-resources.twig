@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="page">
+	<h2>{{post.title}}</h2>
+	<ul class="resources">
+		{% for r in resources %}
+		<li class="resources__item">
+			<h3><a href="{{r.link}}">{{r.title}}</a></h3>
+		</li>
+		{% endfor %}
+	</ul>
+</article>
+{% endblock %}

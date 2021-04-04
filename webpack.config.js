@@ -5,6 +5,6 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "theme/js"),
+    path: path.resolve(__dirname, "theme/dist"),
   },
 };

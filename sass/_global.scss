@@ -13,6 +13,10 @@ table {
 }
 
 body {
+  padding: 2%;
+  background: var(--c-background);
+  color: var(--c-text);
+  font-family: $sans;
 }
 
 a {
@@ -22,7 +26,6 @@ a {
 }
 
 ::selection {
-
 }
 
 button {

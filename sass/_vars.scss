@@ -23,12 +23,58 @@
 }
 
 $black: #000000;
+$sans: "IBM Plex Sans";
 $fast: 150ms;
 
 %bodycopy {
+  font-size: var(--ms-0);
+  letter-spacing: 0.018em;
+  line-height: 1.4;
+  word-spacing: 0.01em;
+  hyphens: auto;
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin-bottom: 0.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul,
+  ol {
+    margin-left: 1.3em;
+  }
+  li {
+    margin-bottom: 0.65em;
+  }
+  blockquote {
+    font-weight: 600;
+    margin-left: 1.3em;
+  }
+  h2 {
+    margin-top: 1em;
+    margin-bottom: .25em;
+    font-size: var(--ms-2);
+  }
+  a {
+    color: var(--c-link);
+    text-decoration: underline;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 :root {
   --ratio: 1.2;
-  --ms-0: clamp(1rem, calc(1.3vw + 0.2rem), 1.24rem);
+  --ms-0: clamp(1.1rem, calc(1.5vw + 0.2rem), 1.3rem);
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
+  --ms-2: calc(var(--ms-1) * var(--ratio));
+  --ms-3: calc(var(--ms-2) * var(--ratio));
+  --ms-4: calc(var(--ms-3) * var(--ratio));
+  --ms-5: calc(var(--ms-4) * var(--ratio));
+  --ms-6: calc(var(--ms-5) * var(--ratio));
+  --ms-7: calc(var(--ms-6) * var(--ratio));
 }

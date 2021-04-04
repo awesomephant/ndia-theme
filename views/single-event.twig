@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<article class="event" id="post-{{ post.ID }}">
+	<header class="event__header">
+		<h1 class="event__title">{{ post.title }}</h1>
+		<p class="event__intro">{{post.short_description}}</p>
+	</header>
+	<div class="event__copy">
+		{{post.content}}
+	</div>
+	<div class="event__data">
+		Event data goes here
+	</div>
+</article>
+
+{% endblock %}
