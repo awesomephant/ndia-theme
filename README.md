@@ -1,4 +1,4 @@
-# Trafalgar Archive 2021 Wordpress Theme
+# Neurodiversity in ALbertopolis 2021 Wordpress Theme
 
 ## Required Plugins
 
