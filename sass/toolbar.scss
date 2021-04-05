@@ -1,8 +1,82 @@
 .toolbar {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  max-width: $column;
+  padding-top: 1rem;
+  padding-bottom: 1.2rem;
+  font-size: var(--ms--1);
+  &[open] summary {
+    padding-bottom: 1;
+    padding-bottom: .5rem;
+  }
+  summary {
+    text-align: left;
+    font-size: var(--ms-1);
+    font-weight: 550;
+    cursor: pointer;
+    display: flex;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .controls {
+    width: 100%;
+    display: flex;
+  }
+}
+
+.options-group {
+  flex-grow: 1;
+  margin-right: 1rem;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  .options {
     border: 1px solid var(--c-text);
-    padding: 1em;
-    font-size: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    margin-bottom: 3em;
+    border-radius: $br;
+    overflow: hidden;
+  }
+  h4 {
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 0.3em;
+    font-size: inherit;
+  }
+  .theme-indicator {
+      width: 1.2rem;
+  }
+  label {
+    text-align: left;
+    padding: 0.5em;
+    display: block;
+    border-bottom: 1px solid var(--c-text);
+    position: relative;
+    cursor: pointer;
+    font-size: var(--ms--1);
+    font-weight: 450;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover,
+    &:focus {
+        background: var(--c-shade);
+    }
+    &:last-of-type {
+        border-bottom: 0;
+    }
+}
+
+input:checked + label {
+      font-weight: 430;
+    background: var(--c-text);
+    color: var(--c-background);
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
 }

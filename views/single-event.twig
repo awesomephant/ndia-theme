@@ -1,17 +1,48 @@
 {% extends "base.twig" %}
-
 {% block content %}
+{% set start = post.start | date("U")%}
+{% set end = post.end | date("U")%}
+{% set now = "now" | date("U")%}
+
 <article class="event" id="post-{{ post.ID }}">
 	<header class="event__header">
 		<h1 class="event__title">{{ post.title }}</h1>
 		<p class="event__intro">{{post.short_description}}</p>
 	</header>
 	<div class="event__copy">
-		{{post.content}}
+		{% if now < start %}
+		{% include "/partial/event-data-upcoming.twig" %}
+		{% endif %}
+		{% if now > end %}
+		{% include "/partial/event-data-past.twig" %}
+		{% endif %}
+		
+		<div class="event__description">
+			{{post.content}}
+		</div>
+		{% set people = post.meta("related_people")%}
+		{% if people | length > 0%}
+		<section class="event__people">
+			<h3>Participants</h3>
+			{% for p in people %}
+			<details class="person">
+				<summary>
+					<span class="person__name">
+						{{p.title}}
+					</span>
+					<p class="person__job">
+						<span class="person__title">
+							{{p.job}}, {{p.institution}}
+						</span>
+					</p>
+				</summary>
+				<div class="person__bio">{{p.bio}}</div>
+			</details>
+			{% endfor %}
+		</section>
+		{% endif %}
 	</div>
-	<div class="event__data">
-		Event data goes here
-	</div>
+
 </article>
 
 {% endblock %}

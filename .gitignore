@@ -8,4 +8,5 @@ dist/
 documentation/
 /theme/style.css
 /theme/js/
+/theme/assets/
 wp-config.php

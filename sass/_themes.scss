@@ -1,10 +1,14 @@
-.theme-light_contrast {
+[data-colour="light-contrast"] {
   --c-background: rgb(252, 252, 252);
-  --c-text: rgb(7, 7, 7);
-  --c-link: rgb(0, 62, 233);
+  --c-text: rgb(0, 0, 0);
+  --c-link: rgb(0, 48, 182);
+  --c-shade: rgb(236, 232, 228);
+  --c-event-upcoming: rgb(243, 236, 227);
 }
-.theme-dark_contrast {
-  --c-background: rgb(0, 0, 0);
-  --c-text: rgb(248, 246, 239);
+[data-colour="dark-contrast"] {
+  --c-background: rgb(6, 6, 7);
+  --c-shade: rgb(42, 42, 46);
+  --c-text: rgb(246, 247, 253);
   --c-link: rgb(152, 176, 255);
+  --c-event-upcoming: rgba(228, 155, 96, 0.1);
 }

@@ -1,0 +1,26 @@
+<div class="event__data card event__data--past">
+    <div class="row">
+        <div class="datum">
+            <span class="datum__label">Event Dates</span>
+            <p class="datum__content">
+                {% include "/partial/dates.twig" with {dates: {start:post.start, end: post.end}}%}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="datum">
+            <span class="datum__label">Audience</span>
+            <p class="datum__content">{{post.audience}}</p>
+        </div>
+        <div class="datum">
+            <span class="datum__label">Location</span>
+            <p class="datum__content">{{post.location}}</p>
+        </div>
+    </div>
+    <div class="card__actions">
+        <p class="event__status">
+            This event is over, but we have a recording of it.
+        </p>
+        <a href="{{post.registration}}" class="button button--primary">View Recording</a>
+    </div>
+</div>

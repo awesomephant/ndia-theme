@@ -1,8 +1,10 @@
-import { initToolbar } from "./initToolbar";
+import { mk_initToolbar } from "./mk.js";
 import textBalancer from 'text-balancer';
+import { initTools } from "./initTools.js.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   console.log(`%cSite by MK`, "color: gray")
-  initToolbar();
+  mk_initToolbar();
+  initTools();
   textBalancer.balanceText('.event__title');
 });

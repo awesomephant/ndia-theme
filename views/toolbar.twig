@@ -1,0 +1,70 @@
+<details class="toolbar" open>
+    <summary>
+        Access tools
+    </summary>
+    <div class="controls">
+        <div class="options-group">
+            <h4>Font Size</h4>
+            <div class="options">
+                <input type="radio" id="font-size-small" name="font-size" value="small">
+                <label for="font-size-small">Small</label>
+
+                <input checked type="radio" id="font-size-medium" name="font-size" value="medium">
+                <label for="font-size-medium">Medium</label>
+
+                <input type="radio" id="font-size-large" name="font-size" value="large">
+                <label for="font-size-large">Large</label>
+
+                <input type="radio" id="font-size-extra-large" name="font-size" value="extra-large">
+                <label for="font-size-extra-large">Extra Large</label>
+            </div>
+        </div>
+        <div class="options-group">
+            <h4>Spacing</h4>
+            <div class="options">
+                <input type="radio" id="spacing-compact" name="spacing" value="small">
+                <label for="spacing-compact">Small</label>
+
+                <input checked type="radio" id="spacing-medium" name="spacing" value="medium">
+                <label for="spacing-medium">Medium</label>
+
+                <input type="radio" id="spacing-generous" name="spacing" value="generous">
+                <label for="spacing-generous">Large</label>
+            </div>
+        </div>
+        <div class="options-group">
+            <h4>Colours</h4>
+            <div class="options">
+                <input checked type="radio" id="color-light-contrast" name="colour" value="light-contrast">
+                <label for="color-light-contrast">
+                    <span>Light/High Contrast</span>
+                    {% include "/partial/theme-indicator.twig" with {theme: "light-contrast"}%}
+                </label>
+
+                <input type="radio" id="color-light-muted" name="colour" value="light-muted">
+                <label for="color-light-muted">
+                    <span>
+                        Light/Muted
+                    </span>
+                    {% include "/partial/theme-indicator.twig" with {theme: "light-muted"}%}
+                </label>
+
+                <input type="radio" id="color-dark-contrast" name="colour" value="dark-contrast">
+                <label for="color-dark-contrast">
+                    <span>
+                        Dark/High Constrast
+                    </span>
+                    {% include "/partial/theme-indicator.twig" with {theme: "dark-contrast"}%}
+                </label>
+
+                <input type="radio" id="color-dark-muted" name="colour" value="dark-muted">
+                <label for="color-dark-muted">
+                    <span>
+                        Dark/Muted
+                    </span>
+                    {% include "/partial/theme-indicator.twig" with {theme: "dark-muted"}%}
+                </label>
+            </div>
+        </div>
+    </div>
+</details>

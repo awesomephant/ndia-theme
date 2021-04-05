@@ -1,4 +1,4 @@
-function initToolbar() {
+function mk_initToolbar() {
   const toolbar = document.querySelector(".mk-toolbar")
   const gridStatus = document.querySelector("#grid-status")
   let gridIsActive = false
@@ -21,4 +21,4 @@ function initToolbar() {
   })
 
 }
-export { initToolbar };
+export { mk_initToolbar };

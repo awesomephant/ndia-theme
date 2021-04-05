@@ -1,0 +1,11 @@
+.nav {
+  font-size: var(--ms-0);
+  & > ul {
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    list-style: none;
+    margin-right: 1em;
+  }
+}

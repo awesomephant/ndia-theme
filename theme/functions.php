@@ -32,7 +32,7 @@ Timber::$autoescape = false;
 
 function mk_add_custom_post_counts()
 {
-	$post_types = array('person', "event");
+	$post_types = array("event");
 	foreach ($post_types as $pt) :
 		$pt_info = get_post_type_object($pt);
 		$num_posts = wp_count_posts($pt);

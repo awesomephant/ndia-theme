@@ -4,12 +4,24 @@
 {% set m1 = dates.start | date("F")%}
 {% set m2 = dates.end | date("F")%}
 
+{% set d1 = dates.start | date("d")%}
+{% set d2 = dates.end | date("d")%}
+
 {% if y1 == y2 %}
+{# Both dates in the same year #}
+
 {% if m1 == m2 %}
-<span>{{dates.start | date("d")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+{# Both dates in the same month #}
+
+{% if d1 == d2 %}
+{# Both dates on the same day #}
+<span>{{dates.end | date("j F Y")}}, {{dates.start | date("H:i")}}–{{dates.end | date("H:i T") | replace({"+0000": ""})}}</span>
 {% else %}
-<span>{{dates.start | date("d F")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+
+<span>{{dates.start | date("d F")}}</span> — <span>{{dates.end | date("d F Y")}}</span>
 {% endif %}
+{% endif %}
+
 {% else %}
-<span>{{dates.start | date("d F Y")}}</span> — <span>{{dates.end | date("d F, Y")}}</span>
+<span>{{dates.start | date("d F Y")}}</span> — <span>{{dates.end | date("d F Y")}}</span>
 {% endif %}

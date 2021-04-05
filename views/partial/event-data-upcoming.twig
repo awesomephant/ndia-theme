@@ -1,0 +1,24 @@
+<div class="event__data card event__data--upcoming">
+    <div class="row">
+        <div class="datum">
+            <span class="datum__label">Event Dates</span>
+            <p class="datum__content">
+                {% include "/partial/dates.twig" with {dates: {start:post.start, end: post.end}}%}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="datum">
+            <span class="datum__label">Audience</span>
+            <p class="datum__content">{{post.audience}}</p>
+        </div>
+        <div class="datum">
+            <span class="datum__label">Location</span>
+            <p class="datum__content">{{post.location}}</p>
+        </div>
+    </div>
+    <div class="card__actions">
+        <a href="{{post.registration}}" class="button button--primary">Register now</a>
+        <a href="#1" class="button">Add to calendar</a>
+    </div>
+</div>

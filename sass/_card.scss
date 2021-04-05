@@ -1,0 +1,13 @@
+.card {
+  border: 1px solid var(--c-text);
+  border-radius: $br;
+  padding: 1.2rem;
+  background: var(--c-background);
+  box-shadow: 0 6px 2px 0px rgba(black, 0.15);
+}
+
+.card__actions {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
