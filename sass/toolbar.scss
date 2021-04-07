@@ -9,7 +9,7 @@
   font-size: var(--ms--1);
   &[open] summary {
     padding-bottom: 1;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
   summary {
     text-align: left;
@@ -36,7 +36,7 @@
     margin-right: 0;
   }
   .options {
-    border: 1px solid var(--c-text);
+    border: 1px solid var(--c-stroke);
     border-radius: $br;
     overflow: hidden;
   }
@@ -47,13 +47,13 @@
     font-size: inherit;
   }
   .theme-indicator {
-      width: 1.2rem;
+    width: 1.6rem;
   }
   label {
     text-align: left;
     padding: 0.5em;
     display: block;
-    border-bottom: 1px solid var(--c-text);
+    border-bottom: 1px solid var(--c-stroke);
     position: relative;
     cursor: pointer;
     font-size: var(--ms--1);
@@ -63,16 +63,16 @@
     align-items: center;
     &:hover,
     &:focus {
-        background: var(--c-shade);
+      background: var(--c-shade);
     }
     &:last-of-type {
-        border-bottom: 0;
+      border-bottom: 0;
     }
-}
+  }
 
-input:checked + label {
-      font-weight: 430;
-    background: var(--c-text);
+  input:checked + label {
+    font-weight: 430;
+    background: var(--c-stroke);
     color: var(--c-background);
   }
   input {

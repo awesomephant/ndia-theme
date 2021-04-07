@@ -10,37 +10,37 @@
 		<p class="event__intro">{{post.short_description}}</p>
 	</header>
 	<div class="event__copy">
-		{% if now < start %}
-		{% include "/partial/event-data-upcoming.twig" %}
-		{% endif %}
-		{% if now > end %}
-		{% include "/partial/event-data-past.twig" %}
-		{% endif %}
-		
-		<div class="event__description">
-			{{post.content}}
-		</div>
-		{% set people = post.meta("related_people")%}
-		{% if people | length > 0%}
-		<section class="event__people">
-			<h3>Participants</h3>
-			{% for p in people %}
-			<details class="person">
-				<summary>
-					<span class="person__name">
-						{{p.title}}
-					</span>
-					<p class="person__job">
-						<span class="person__title">
-							{{p.job}}, {{p.institution}}
+		{% if now < start %} {% include "/partial/event-data-upcoming.twig" %} {% endif %} {% if now> end %}
+			{% include "/partial/event-data-past.twig" %}
+			{% endif %}
+
+			<div class="event__description">
+				{{post.content}}
+			</div>
+			{% set people = post.meta("related_people")%}
+			{% if people | length > 0%}
+			<section class="event__people">
+				<h3>Participants</h3>
+				{% for p in people %}
+				<details class="person">
+					<summary>
+						<span class="person__name">
+							{{p.title}}
 						</span>
-					</p>
-				</summary>
-				<div class="person__bio">{{p.bio}}</div>
-			</details>
-			{% endfor %}
-		</section>
-		{% endif %}
+						<p class="person__job">
+							{% if p.job != ""%}
+							{{p.job}},
+							{% endif %}
+							{% if p.institution != ""%}
+							<span class="institution">{{p.institution}}</span>
+							{% endif %}
+						</p>
+					</summary>
+					<div class="person__bio">{{p.bio}}</div>
+				</details>
+				{% endfor %}
+			</section>
+			{% endif %}
 	</div>
 
 </article>

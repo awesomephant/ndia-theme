@@ -1,14 +1,34 @@
 [data-colour="light-contrast"] {
   --c-background: rgb(252, 252, 252);
   --c-text: rgb(0, 0, 0);
+  --c-stroke: rgb(0, 0, 0);
   --c-link: rgb(0, 48, 182);
   --c-shade: rgb(236, 232, 228);
   --c-event-upcoming: rgb(243, 236, 227);
 }
+
+[data-colour="light-muted"] {
+  --c-background: rgb(204, 198, 193);
+  --c-text: rgba(0, 0, 0, 0.945);
+  --c-stroke: rgb(0, 0, 0);
+  --c-link: rgb(0, 48, 182);
+  --c-shade: rgba(0, 0, 0, 0.103);
+  --c-event-upcoming: rgb(243, 236, 227);
+}
+
 [data-colour="dark-contrast"] {
-  --c-background: rgb(6, 6, 7);
-  --c-shade: rgb(42, 42, 46);
+  --c-background: rgb(6, 8, 12);
+  --c-shade: rgba(255, 255, 255, 0.075);
+  --c-stroke: rgb(255, 251, 0);
   --c-text: rgb(246, 247, 253);
   --c-link: rgb(152, 176, 255);
-  --c-event-upcoming: rgba(228, 155, 96, 0.1);
+  --c-event-upcoming: rgba(245, 245, 245, 0.055);
+}
+[data-colour="dark-muted"] {
+  --c-background: rgb(24, 25, 29);
+  --c-shade: rgb(9, 9, 14);
+  --c-stroke: rgb(117, 138, 184);
+  --c-text: rgb(153, 169, 190);
+  --c-link: rgb(152, 176, 255);
+  --c-event-upcoming: rgba(0, 0, 0, 0.151);
 }
