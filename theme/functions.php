@@ -82,12 +82,21 @@ class NDIASite extends Timber\Site
 			'meta_key' => 'start',
 			'orderby' => 'meta_value_datetime'
 		);
+		$events_today_args = array(
+			'post_type' => 'event',
+			'post_status' => 'publish',
+			'meta_key' => 'start',
+			'meta_value'   => date("Ymd"),
+			'meta_compare' => '>',
+			'orderby' => 'meta_value_datetime'
+		);
 		$resourceArgs = array(
 			'post_type' => 'resource',
 			'post_status' => 'publish',
 		);
 
 		$context['events'] = Timber::get_posts($eventArgs);
+		$context['events_today'] = Timber::get_posts($events_today_args);
 		$context['resources'] = Timber::get_posts($resourceArgs);
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;

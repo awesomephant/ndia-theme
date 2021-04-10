@@ -1,4 +1,20 @@
 .footer {
-  text-align: center;
-  padding-top: 12rem;
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: $column;
+  margin: 0 auto;
+  margin-top: 6rem;
+  border-top: 1px solid var(--c-stroke);
+  section {
+    margin-bottom: 1rem;
+    max-width: 30rem;
+  }
+}
+
+.footer__nav {
+  margin-bottom: 1rem;
+  li {
+    list-style: none;
+  }
 }

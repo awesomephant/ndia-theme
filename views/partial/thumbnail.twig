@@ -1,0 +1,6 @@
+<figure class="event__thumbnail">
+    <img src="{{img | resize (500)}}" srcset="{{img | resize (500) | towebp}} 500w, {{img | resize (1000) | towebp}} 1000w, {{img | resize (1500) | towebp}} 1500w" alt="{{img.alt}}">
+    {% if img.caption != ""%}
+    <figcaption>{{img.caption}}</figcaption>
+    {% endif %}
+</figure>
