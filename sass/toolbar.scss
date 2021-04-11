@@ -7,12 +7,12 @@
   font-size: var(--ms--1);
   &[open] summary {
     padding-bottom: 1;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.1rem;
   }
   summary {
     text-align: left;
     font-size: var(--ms-0);
-    font-weight: 550;
+    font-weight: 500;
     cursor: pointer;
     display: flex;
     &:hover,

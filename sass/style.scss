@@ -3,7 +3,7 @@ Theme Name: Neurodiversity in Albertopolis 21
 Author: Max Kohler
 Author URI: http://maxkoehler.com/
 Description: Custom theme for the Neurodiversity in Albertopolis Network. Design and development Max Kohler. Required plugins: Advanced Custom Fields Pro, Custom Post Type UI, Timber Library.
-Version: 0.12
+Version: 0.13
 License: All rights reserved
 */
 
@@ -20,4 +20,6 @@ License: All rights reserved
 @import "button";
 @import "footer";
 @import "page";
+@import "resources";
+@import "chip";
 @import "mk-toolbar";

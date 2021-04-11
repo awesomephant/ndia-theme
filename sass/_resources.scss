@@ -1,0 +1,10 @@
+.resources {
+  max-width: $column;
+  margin: 0 auto;
+}
+
+.resources__item {
+  list-style: none;
+  margin-bottom: 1rem;
+  font-size: var(--ms-0);
+}

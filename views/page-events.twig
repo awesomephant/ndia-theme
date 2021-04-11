@@ -4,22 +4,27 @@
 {% set now = "now" | date("U")%}
 
 <article class="events">
-	<ul>
-		{% for e in events %}
-
+	<h2>Upcoming Events {{test}}</h2>
+	<ul class="events--future">
+		{% for e in future_events %}
+		
 		{% set start = e.start | date("U")%}
 		{% set end = e.end | date("U")%}
-		{% set state = "past" %}
-
-		{% if start > now %}
-		{% set state = "future" %}
-		{% endif %}
-
-		<li class="events__item {{state}}">
-			<span class="event__date">
-				{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
-			</span>
-			{% if e.thumbnail.src != "" and state == "future"%}
+		{% set diff = (start - now) / 60 / 60 / 24 %}
+		
+		<li class="events__item future">
+			<header>
+				<span class="event__date">
+					{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
+				</span>
+				{% if diff < 1 %}
+					<span class="chip">Today</span>
+				{% endif %}
+				{% if diff > 1 and diff < 2 %}
+					<span class="chip">Tomorrow</span>
+				{% endif %}
+			</header>
+			{% if e.thumbnail.src != "" %}
 			{% set img = e.thumbnail%}
 			<a class="thumbnail" href="{{e.link}}">
 				<img src="{{img | resize (500)}}" srcset="{{img | resize (500) | towebp}} 500w, {{img | resize (1000) | towebp}} 1000w, {{img | resize (1500) | towebp}} 1500w" alt="{{img.alt}}">
@@ -33,9 +38,24 @@
 			<p>
 				{{e.short_description}}
 			</p>
-			{% if state == "future"%}
-				<span>{{e.audience}}</span>
 			{% endif %}
+		</li>
+		{% endfor %}
+		</ul>
+		<h2>Past Events</h2>
+		<ul class="events--past">
+		{% for e in past_events %}
+		<li class="events__item">
+			<span class="event__date">
+				{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
+			</span>			
+			<a href="{{e.link}}">
+				<h3>{{e.title}}</h3>
+			</a>
+			{% if e.short_description %}
+			<p>
+				{{e.short_description}}
+			</p>
 			{% endif %}
 		</li>
 		{% endfor %}

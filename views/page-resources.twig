@@ -1,12 +1,15 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<article class="page">
+<article class="resources">
 	<h2>{{post.title}}</h2>
-	<ul class="resources">
+	<ul>
 		{% for r in resources %}
 		<li class="resources__item">
-			<h3><a href="{{r.link}}">{{r.title}}</a></h3>
+			<h3 class="resource__title"><a href="{{r.link}}">{{r.title}}</a></h3>
+			<p class="resource__description">
+				{{r.description}}
+			</p>
 		</li>
 		{% endfor %}
 	</ul>

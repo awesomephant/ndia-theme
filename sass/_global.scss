@@ -36,3 +36,20 @@ a {
 button {
   -webkit-tap-highlight-color: transparent;
 }
+
+h2 {
+  margin-bottom: 1rem;
+  font-weight: 560;
+  font-size: var(--ms-2);
+}
+
+h3 {
+  margin-bottom: 0.1rem;
+  font-weight: 560;
+  font-size: var(--ms-1);
+}
+
+h4 {
+  font-weight: 500;
+  font-size: var(--ms-0);
+}
