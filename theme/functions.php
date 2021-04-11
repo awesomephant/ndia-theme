@@ -82,12 +82,20 @@ class NDIASite extends Timber\Site
 			'meta_key' => 'start',
 			'orderby' => 'meta_value_datetime'
 		);
-		$events_today_args = array(
+		$future_event_args = array(
 			'post_type' => 'event',
 			'post_status' => 'publish',
 			'meta_key' => 'start',
-			'meta_value'   => date("Ymd"),
+			'meta_value'   => date("Y-m-d H:i:s"),
 			'meta_compare' => '>',
+			'orderby' => 'meta_value_datetime'
+		);
+		$past_event_args = array(
+			'post_type' => 'event',
+			'post_status' => 'publish',
+			'meta_key' => 'end',
+			'meta_value'   => date("Y-m-d H:i:s"),
+			'meta_compare' => '<',
 			'orderby' => 'meta_value_datetime'
 		);
 		$resourceArgs = array(
@@ -96,7 +104,8 @@ class NDIASite extends Timber\Site
 		);
 
 		$context['events'] = Timber::get_posts($eventArgs);
-		$context['events_today'] = Timber::get_posts($events_today_args);
+		$context['future_events'] = Timber::get_posts($future_event_args);
+		$context['past_events'] = Timber::get_posts($past_event_args);
 		$context['resources'] = Timber::get_posts($resourceArgs);
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
