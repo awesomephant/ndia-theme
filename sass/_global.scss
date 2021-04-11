@@ -18,12 +18,17 @@ body {
   color: var(--c-text);
   font-family: $sans;
   font-feature-settings: "ss03" 1;
+  transition: 160ms;
 }
 
 a {
   color: inherit;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: 4px solid var(--c-focus);
 }
 
 .skip-link {

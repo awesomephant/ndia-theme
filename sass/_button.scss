@@ -11,7 +11,8 @@
   background: var(--c-background);
   text-decoration: none;
   font-size: var(--ms-0);
-  box-shadow: 0 3px 2px 0px rgba(black, .15);
+  cursor: pointer;
+  position: relative;
   white-space: nowrap;
   &:hover,
   &:focus {

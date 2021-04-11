@@ -24,7 +24,6 @@
   }
   &.future {
     @extend .card;
-    background: var(--c-event-upcoming);
     padding: 1rem;
     margin-bottom: 4rem;
   }
@@ -62,9 +61,8 @@
 }
 
 .event__thumbnail {
+  margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-left: -2rem;
-  width: calc(100% + 4rem);
   display: block;
   img {
     display: block;
@@ -73,7 +71,6 @@
   }
   figcaption {
     display: block;
-    padding-left: 2rem;
     padding-top: 0.5rem;
   }
 }
@@ -127,13 +124,6 @@
   .button {
     margin-right: 0.5em;
   }
-}
-
-.event__data--upcoming {
-  background: var(--c-event-upcoming);
-}
-.event__data--past {
-  background: var(--c-event-past);
 }
 
 .event__people {

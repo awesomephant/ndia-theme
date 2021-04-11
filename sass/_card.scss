@@ -1,13 +1,17 @@
 .card {
-  border: 1px solid var(--c-stroke);
+  border: 2px solid var(--c-stroke);
   border-radius: $br;
   padding: 1.2rem;
-  background: var(--c-background);
-  box-shadow: 0 6px 2px 0px rgba(black, 0.15);
+  background: transparent;
+  box-shadow: 5px 5px 0px 0px var(--c-stroke);
 }
 
 .card__actions {
   display: flex;
   align-items: flex-start;
   margin-top: 1rem;
+  flex-wrap: wrap;
+  .newsletter {
+    padding-top: .5em;
+  }
 }

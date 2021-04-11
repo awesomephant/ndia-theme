@@ -18,9 +18,16 @@
         </div>
     </div>
     <div class="card__actions">
+        {% if post.recording %}
         <p class="event__status">
-            This event is over, but we have a recording of it.
+            This event is over, but we've published a recording of it.
         </p>
-        <a href="{{post.registration}}" class="button button--primary">View Recording</a>
+        <a href="{{post.recording}}" class="button button--primary">View Recording</a>
+        {% else %}
+        <p class="event__status">
+            This event is over. Join our mailing list to be notified when we publish a recording of it.
+        </p>
+        {% include "/partial/newsletter-form.twig" with {}%}
+        {% endif %}
     </div>
 </div>

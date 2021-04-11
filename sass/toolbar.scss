@@ -37,6 +37,9 @@
     border: 1px solid var(--c-stroke);
     border-radius: $br;
     overflow: hidden;
+    &:focus-within {
+      box-shadow: 0 0 0 4px var(--c-focus);
+    }
   }
   h4 {
     text-align: left;
@@ -75,6 +78,6 @@
   }
   input {
     position: absolute;
-    visibility: hidden;
+    left: -9999px;
   }
 }
