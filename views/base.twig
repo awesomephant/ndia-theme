@@ -12,10 +12,13 @@
 	<header class="header">
 		{% block header %}
 		<h1 class="header__title" role="banner">
-			<a href="{{site.url}}" rel="home">{{site.name}}</a>
+			<a href="{{site.url}}" rel="home">
+			{% include "partial/logo.svg" %}
+			</a>
 		</h1>
 		{% endblock %}
 		<nav class="nav" role="navigation">
+			<span>Menu</span>
 			{% include "menu.twig" with {'items': menu.get_items} %}
 		</nav>
 	</header>

@@ -102,6 +102,10 @@ class NDIASite extends Timber\Site
 			'post_type' => 'resource',
 			'post_status' => 'publish',
 		);
+		$resource_terms = get_terms(array(
+			'taxonomy' => 'resource_group',
+			'hide_empty' => false,
+		));
 
 		$context['events'] = Timber::get_posts($eventArgs);
 		$context['future_events'] = Timber::get_posts($future_event_args);
@@ -109,6 +113,7 @@ class NDIASite extends Timber\Site
 		$context['resources'] = Timber::get_posts($resourceArgs);
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+		$context['resource_terms']  = $resource_terms;
 
 		return $context;
 	}

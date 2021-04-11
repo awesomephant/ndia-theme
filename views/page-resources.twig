@@ -3,15 +3,25 @@
 {% block content %}
 <article class="resources">
 	<h2>{{post.title}}</h2>
-	<ul>
-		{% for r in resources %}
-		<li class="resources__item">
-			<h3 class="resource__title"><a href="{{r.link}}">{{r.title}}</a></h3>
-			<p class="resource__description">
-				{{r.description}}
-			</p>
-		</li>
+		{% for t in resource_terms %}
+		{% set term = TimberTerm(t)%}
+		<details open>
+			<summary>
+				<h3>
+					{{t.name}}
+				</h3>
+			</summary>
+			<ul>
+				{% for r in term.posts(-1)%}
+				<li class="resources__item">
+					<h4 class="resource__title"><a href="{{r.resource_url}}">{{r.title}}</a></h4>
+					<p class="resource__description">
+						{{r.description}}
+					</p>
+				</li>
+				{% endfor %}
+			</ul>
+		</details>
 		{% endfor %}
-	</ul>
 </article>
 {% endblock %}

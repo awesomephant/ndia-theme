@@ -1,12 +1,49 @@
-.nav {
-  font-size: var(--ms-0);
-  li {
-    list-style: none;
+%current {
+  background: var(--c-stroke);
+  color: var(--c-background);
+  &:hover, &:focus {
+    background: var(--c-stroke);
+    
   }
-  a {
-    text-decoration: underline;
-    &:hover, &:focus {
-      text-decoration: none;
+}
+
+.nav {
+  font-size: var(--ms--1);
+  span {
+    margin-bottom: .3em;
+    display: block;
+  }
+  & > ul {
+    display: inline-flex;
+    font-weight: 400;
+    border: 2px solid var(--c-stroke);
+    border-radius: $br;
+    overflow: hidden;
+    // justify-content: center;
+  }
+  li {
+    display: block;
+    list-style: none;
+    &:last-of-type a {
+      border-right: 0;
     }
   }
+  a {
+    display: block;
+    padding: 0.5em 0.75em;
+    padding-bottom: 0.35em;;
+    border-right: 2px solid var(--c-stroke);
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background: var(--c-shade);
+    }
+  }
+  .current-menu-item a {
+    @extend %current;
+  }
+}
+
+.single-event .nav a[href*="/events"]{
+  @extend %current;
 }

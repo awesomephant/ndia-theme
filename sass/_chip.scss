@@ -1,9 +1,9 @@
 .chip {
-  background: var(--c-text);
-  color: white;
+  background: var(--c-stroke);
+  color: var(--c-background);
   display: inline-block;
-  padding: .12rem .55rem;
-  padding-bottom: 0;
+  padding: .2em .6em;
+  padding-bottom: .1em;
   border-radius: 3px;
   font-size: var(--ms--1);
   letter-spacing: .01em;

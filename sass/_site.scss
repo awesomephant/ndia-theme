@@ -1,31 +1,44 @@
 .header {
-  padding-top: 2rem;
   max-width: $column;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .header__title {
   font-weight: 500;
-  font-size: var(--ms-2);
-  margin-bottom: 0.5rem;
+  font-size: 0;
+  max-width: 28rem;
+  // margin: 0 auto;
+  margin-left: -3%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .footer {
   display: block;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
   max-width: $column;
   margin: 0 auto;
   margin-top: 6rem;
-  border-top: 1px solid var(--c-stroke);
+  position: relative;
+  overflow-y: hidden;
   section {
-    margin-bottom: 1rem;
-    max-width: 30rem;
+    margin-bottom: 1.5em;
+    max-width: 35rem;
+  }
+  .newsletter {
+    margin-bottom: 2.5em;
   }
   .newsletter label {
-      margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
+}
+
+.footer__pattern {
+  position: absolute;
+  bottom: -20%;
+  z-index: -1000;
 }
 
 .footer__nav {
@@ -49,25 +62,26 @@
     margin-bottom: 0.2rem;
     line-height: 1.25;
   }
-  input {
-    font-family: $sans;
-    &::placeholder {
-      color: #585858;
-      opacity: 1;
-    }
-  }
   .scroll {
-    display: flex;
+    display: inline-flex;
+    border: 2px solid var(--c-stroke);
+    border-radius: $br;
+    overflow: hidden;
   }
   .email {
-    border: 2px solid var(--c-stroke);
-    padding: 0.2em 0.5em;
-    padding-bottom: 0.15em;
-    margin-right: 0.5em;
-    border-radius: 2px;
+    padding: 0.25em 0.75em;
+    padding-bottom: 0.1em;
+    font-family: $sans;
+    background: var(--c-background);
+    color: var(--c-text);
+    &::placeholder {
+      opacity: .6;
+    }
   }
   .button {
+    border-radius: 0;
     font-size: var(--ms--1);
-    padding-top: 0.25em;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
   }
 }

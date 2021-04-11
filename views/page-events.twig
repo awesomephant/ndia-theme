@@ -13,7 +13,7 @@
 		{% set diff = (start - now) / 60 / 60 / 24 %}
 		
 		<li class="events__item future">
-			<header>
+			<header class="card__header">
 				<span class="event__date">
 					{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
 				</span>
@@ -24,7 +24,7 @@
 					<span class="chip">Tomorrow</span>
 				{% endif %}
 			</header>
-			{% if e.thumbnail.src != "" %}
+			{% if e.thumbnail.src == "asd" %}
 			{% set img = e.thumbnail%}
 			<a class="thumbnail" href="{{e.link}}">
 				<img src="{{img | resize (500)}}" srcset="{{img | resize (500) | towebp}} 500w, {{img | resize (1000) | towebp}} 1000w, {{img | resize (1500) | towebp}} 1500w" alt="{{img.alt}}">
