@@ -61,18 +61,12 @@
   img {
     display: block;
     max-width: 100%;
-    border-radius: 2px;
+    border-radius: $bw;
   }
   figcaption {
     display: block;
     padding-top: 0.5rem;
   }
-}
-
-.event__title {
-  font-size: var(--ms-4);
-  font-weight: 500;
-  line-height: 1.1;
 }
 
 .event__intro {
@@ -100,6 +94,10 @@
   margin: 0 auto;
 }
 
+.no-events {
+  margin-bottom: 3em;
+}
+
 .event__data {
   max-width: 35rem;
   margin-bottom: 2.5rem;
@@ -118,9 +116,6 @@
   .datum__content {
     font-weight: 500;
     font-size: var(--ms-0);
-  }
-  .button {
-    margin-right: 0.5em;
   }
 }
 

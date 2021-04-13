@@ -4,33 +4,24 @@
 {% set now = "now" | date("U")%}
 
 <article class="events">
-	<h2>Upcoming Events {{test}}</h2>
+	{% if future_events | length > 0%}
+	<h2>Upcoming Events</h2>
 	<ul class="events--future">
 		{% for e in future_events %}
-		
 		{% set start = e.start | date("U")%}
 		{% set end = e.end | date("U")%}
 		{% set diff = (start - now) / 60 / 60 / 24 %}
-		
-		<li class="events__item future">
+
+		<li class="events__item future card card--featured">
 			<header class="card__header">
 				<span class="event__date">
 					{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
 				</span>
-				{% if diff < 1 %}
-					<span class="chip">Today</span>
-				{% endif %}
-				{% if diff > 1 and diff < 2 %}
-					<span class="chip">Tomorrow</span>
-				{% endif %}
+				{% if diff < 1 %} <span class="chip">Today</span>
+					{% endif %}
+					{% if diff > 1 and diff < 2 %} <span class="chip">Tomorrow</span>
+						{% endif %}
 			</header>
-			{% if e.thumbnail.src == "asd" %}
-			{% set img = e.thumbnail%}
-			<a class="thumbnail" href="{{e.link}}">
-				<img src="{{img | resize (500)}}" srcset="{{img | resize (500) | towebp}} 500w, {{img | resize (1000) | towebp}} 1000w, {{img | resize (1500) | towebp}} 1500w" alt="{{img.alt}}">
-			</a>
-			{% endif %}
-			
 			<a href="{{e.link}}">
 				<h3>{{e.title}}</h3>
 			</a>
@@ -41,14 +32,20 @@
 			{% endif %}
 		</li>
 		{% endfor %}
-		</ul>
-		<h2>Past Events</h2>
-		<ul class="events--past">
+	</ul>
+	{% else %}
+	<aside class="card card--featured no-events">
+		<p>There are no events scheduled right now.<br>Sign up to our mailing list for updates.</p>
+		{% include "/partial/newsletter-form.twig" with {label: "Your email"}%}
+	</aside>
+	{% endif %}
+	<h2>Past Events</h2>
+	<ul class="events--past">
 		{% for e in past_events %}
 		<li class="events__item">
 			<span class="event__date">
 				{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
-			</span>			
+			</span>
 			<a href="{{e.link}}">
 				<h3>{{e.title}}</h3>
 			</a>

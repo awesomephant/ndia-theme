@@ -35,9 +35,10 @@
     margin-right: 0;
   }
   .options {
-    border: 2px solid var(--c-stroke);
-    border-radius: $br;
+    border: $bw solid var(--c-stroke);
+    border-radius: $br-small;
     overflow: hidden;
+    box-shadow: 0 2px 0px 1px rgba(black, .1);
     &:focus-within {
       box-shadow: 0 0 0 4px var(--c-focus);
     }
@@ -55,25 +56,28 @@
     text-align: left;
     padding: 0.5em;
     display: block;
-    border-bottom: 2px solid var(--c-stroke);
+    border-bottom: $bw solid var(--c-stroke);
     position: relative;
     cursor: pointer;
     font-size: var(--ms--1);
-    font-weight: 450;
+    font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &:hover,
     &:focus {
-      background: var(--c-shade);
+      background: var(--c-background-shade);
     }
     &:last-of-type {
       border-bottom: 0;
     }
   }
+  svg {
+    display: none;
+  }
 
   input:checked + label {
-    font-weight: 430;
+    font-weight: 400;
     background: var(--c-stroke);
     color: var(--c-background);
   }

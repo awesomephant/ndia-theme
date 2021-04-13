@@ -1,9 +1,17 @@
 .card {
-  border: 2px solid var(--c-stroke);
+  border: $bw solid var(--c-stroke);
   border-radius: $br;
   padding: 1.2rem;
   background: transparent;
   box-shadow: 5px 5px 0px 0px var(--c-stroke);
+  & > p {
+    font-size: var(--ms-0);
+    margin-bottom: .5em;
+  }
+}
+.card--featured {
+  border-color: #18923f;
+  box-shadow: 5px 5px 0px 0px #18923f;
 }
 
 .card__actions {

@@ -6,5 +6,5 @@ window.addEventListener("DOMContentLoaded", () => {
   console.log(`%cSite by MK`, "color: gray")
   mk_initToolbar();
   initTools();
-  textBalancer.balanceText('.event__title');
+  textBalancer.balanceText('.event__title, h3, h4');
 });

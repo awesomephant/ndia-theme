@@ -14,6 +14,7 @@
   cursor: pointer;
   position: relative;
   white-space: nowrap;
+  box-shadow: 0 2px 0px 1px rgba(black, .1);
   &:hover,
   &:focus {
     text-decoration: underline;

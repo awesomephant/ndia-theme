@@ -23,9 +23,10 @@
   margin-top: 6rem;
   position: relative;
   overflow-y: hidden;
+  font-size: var(--ms--1);
   section {
-    margin-bottom: 1.5em;
-    max-width: 35rem;
+    margin-bottom: .5em;
+    max-width: 35em;
   }
   .newsletter {
     margin-bottom: 2.5em;
@@ -64,24 +65,23 @@
   }
   .scroll {
     display: inline-flex;
-    border: 2px solid var(--c-stroke);
-    border-radius: $br;
+    border: $bw solid var(--c-stroke);
+    border-radius: $br-small;
     overflow: hidden;
+    box-shadow: 0 2px 0px 1px rgba(black, .1);
   }
   .email {
-    padding: 0.25em 0.75em;
-    padding-bottom: 0.1em;
+    padding: 0.5em 0.75em;
+    padding-bottom: 0.4em;
     font-family: $sans;
     background: var(--c-background);
     color: var(--c-text);
     &::placeholder {
-      opacity: .6;
+      opacity: .75;
     }
   }
   .button {
     border-radius: 0;
     font-size: var(--ms--1);
-    padding-top: 0.2em;
-    padding-bottom: 0.1em;
   }
 }

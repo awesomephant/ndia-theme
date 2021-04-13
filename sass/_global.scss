@@ -43,9 +43,40 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+summary {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+  &:after {
+    content: "+";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    transform-origin: center;
+    transition: 100ms;
+  }
+  [open] &:after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+h1 {
+  font-weight: 560;
+  line-height: 1.2;
+  font-size: var(--ms-3);
+}
+
 h2 {
   margin-bottom: 1rem;
   font-weight: 560;
+  line-height: 1.2;
   font-size: var(--ms-2);
 }
 
@@ -56,6 +87,8 @@ h3 {
 }
 
 h4 {
-  font-weight: 500;
+  font-weight: 560;
   font-size: var(--ms-0);
+  line-height: 1.2;
+  margin-bottom: .2em;
 }

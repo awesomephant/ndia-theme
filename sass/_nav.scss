@@ -16,8 +16,9 @@
   & > ul {
     display: inline-flex;
     font-weight: 400;
-    border: 2px solid var(--c-stroke);
-    border-radius: $br;
+    border: $bw solid var(--c-stroke);
+    border-radius: $br-small;
+    box-shadow: 0 2px 0px 1px rgba(black, .1);
     overflow: hidden;
     // justify-content: center;
   }
@@ -32,11 +33,11 @@
     display: block;
     padding: 0.5em 0.75em;
     padding-bottom: 0.35em;;
-    border-right: 2px solid var(--c-stroke);
+    border-right: $bw solid var(--c-stroke);
     &:hover,
     &:focus {
       text-decoration: underline;
-      background: var(--c-shade);
+      background: var(--c-background-shade);
     }
   }
   .current-menu-item a {
