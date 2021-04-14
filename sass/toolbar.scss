@@ -37,8 +37,8 @@
   .options {
     border: $bw solid var(--c-stroke);
     border-radius: $br-small;
-    overflow: hidden;
     box-shadow: 0 2px 0px 1px rgba(black, .1);
+    overflow: hidden;
     &:focus-within {
       box-shadow: 0 0 0 4px var(--c-focus);
     }

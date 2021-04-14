@@ -20,7 +20,6 @@
 		{% if now < start %} {% include "/partial/event-data-upcoming.twig" %} {% endif %} {% if now> end %}
 			{% include "/partial/event-data-past.twig" %}
 			{% endif %}
-
 			<div class="event__description">
 				{{post.content}}
 			</div>

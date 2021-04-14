@@ -17,6 +17,7 @@
 
 .resource__group {
   @extend .card;
+  display: block;
   h3 {
     display: flex;
     align-items: flex-start;
