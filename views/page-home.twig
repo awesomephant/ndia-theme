@@ -1,7 +1,39 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<article class="home-content">
-	{{content}}
+<article class="page__content">
+	<main>
+		<p>
+			<strong>Neurodiversity in Albertopolis</strong> (NDIA) is a network of neurodiverse staff and students from different institutions around Exhibition Road, London. We come together to support each other and work towards an inclusive environment for neurodiverse people across our organisations.
+		</p>
+		{{content}}
+	</main>
+	<ul class="events--future">
+		{% for e in future_events %}
+		{% set start = e.start | date("U")%}
+		{% set end = e.end | date("U")%}
+		{% set diff = (start - now) / 60 / 60 / 24 %}
+
+		<li class="events__item future card card--featured">
+			<header class="card__header">
+				<span class="event__date">
+					{% include "/partial/dates.twig" with {dates: {start:e.start, end: e.end}}%}
+				</span>
+				{% if diff < 1 %} <span class="chip">Today</span>{% endif %}
+					{% if diff > 1 and diff < 2 %} <span class="chip">Tomorrow</span>{% else %}
+						<span class="chip">Upcoming Event</span>
+						{% endif %}
+			</header>
+			<a href="{{e.link}}">
+				<h3>{{e.title}}</h3>
+			</a>
+			{% if e.short_description %}
+			<p>
+				{{e.short_description}}
+			</p>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
 </article>
 {% endblock %}

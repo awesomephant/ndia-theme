@@ -113,6 +113,10 @@ class NDIASite extends Timber\Site
 		$context['resources'] = Timber::get_posts($resourceArgs);
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
+		$context['is_home']  = is_front_page();
+		$context['setting_font_size']  = isset($_COOKIE["font-size"]) ? $_COOKIE["font-size"] : "medium";
+		$context['setting_spacing']  = isset($_COOKIE["spacing"]) ? $_COOKIE["spacing"]: "medium";
+		$context['setting_colour']  =  isset($_COOKIE["colour"]) ? $_COOKIE["colour"]: "light-contrast";
 		$context['resource_terms']  = $resource_terms;
 
 		return $context;

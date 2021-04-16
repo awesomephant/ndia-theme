@@ -14,7 +14,7 @@
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-  box-shadow: 0 2px 0px 1px rgba(black, .1);
+  box-shadow: $bs;
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -24,4 +24,66 @@
   color: var(--c-background);
   background: var(--c-stroke);
   font-weight: 400;
+}
+
+.button--tooltip {
+  position: relative;
+  .button {
+    margin-right: 0;
+  }
+}
+
+.tooltip__inner {
+  background: var(--c-background);
+  border: 1px solid $black;
+  border-radius: $br;
+  overflow: hidden;
+}
+
+.tooltip {
+  position: absolute;
+  padding-bottom: .6rem;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0px 6px 1px rgba(0,0,0,.1));
+  display: none;
+  .open &{
+    display: block;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width:  .8rem;
+    height: .8rem;
+    background: white;
+    bottom: .20rem;
+    z-index: -100;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-bottom: 1px solid var(--c-stroke);
+    border-right: 1px solid var(--c-stroke);
+  }
+  a {
+    padding: 0.6em .75em;
+    padding-bottom: .45em;
+    font-size: var(--ms-0);
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--c-stroke);
+    margin-right: 0;
+    position: relative;
+    z-index: 200;
+    &:hover,
+    &:focus {
+      background: var(--c-background-shade);
+      text-decoration: underline;
+    }
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
 }

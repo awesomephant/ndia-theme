@@ -1,7 +1,7 @@
 .header {
   max-width: $column;
   margin: 0 auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4em;
 }
 
 .header__title {
@@ -15,6 +15,7 @@
 }
 
 .footer {
+  @extend %copy--small;
   display: block;
   padding-top: 2rem;
   padding-bottom: 5rem;
@@ -23,10 +24,8 @@
   margin-top: 6rem;
   position: relative;
   overflow-y: hidden;
-  font-size: var(--ms--1);
   section {
     margin-bottom: 0.5em;
-    max-width: 35em;
   }
   .newsletter {
     margin-bottom: 2.5em;
@@ -58,11 +57,10 @@
 
 .newsletter {
   label {
-    max-width: 20em;
+    @extend %copy--small;
     display: block;
+    max-width: 20em;
     margin-bottom: 0.2rem;
-    line-height: 1.25;
-    font-size: var(--ms--1);
   }
   .scroll {
     display: inline-flex;

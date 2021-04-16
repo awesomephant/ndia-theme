@@ -1,9 +1,9 @@
 .toolbar {
   font-size: 2rem;
   text-align: center;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  max-width: $column;
+  padding-top: 1.5em;
+  display: block;
+  max-width: 36em;
   font-size: var(--ms--1);
   &[open] summary {
     padding-bottom: 1;
@@ -43,7 +43,8 @@
       box-shadow: 0 0 0 4px var(--c-focus);
     }
   }
-  h4 {
+  .label {
+    display: block;
     text-align: left;
     font-weight: normal;
     margin-bottom: 0.3em;

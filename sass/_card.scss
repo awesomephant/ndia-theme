@@ -1,18 +1,22 @@
 .card {
   border: $bw solid var(--c-stroke);
   border-radius: $br;
-  padding: 1.2rem;
+  padding: 1.2em;
   display: inline-block;
   background: transparent;
   box-shadow: 5px 5px 0px 0px var(--c-stroke);
+  [data-spacing="compact"] & {
+    padding: 1em;
+  }
   & > p {
     font-size: var(--ms-0);
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 }
-.card--featured {
-  border-color: #18923f;
-  box-shadow: 5px 5px 0px 0px #18923f;
+.card.card--featured {
+  $green: #000000;
+  border-color: $green;
+  box-shadow: 5px 5px 0px 0px $green;
 }
 
 .card__actions {
@@ -21,7 +25,12 @@
   margin-top: 1rem;
   flex-wrap: wrap;
   .newsletter {
-    padding-top: .5em;
+    .button {
+      margin-right: 0;
+    }
+  }
+  .button {
+    margin-right: 0.75em;
   }
 }
 .card__header {

@@ -6,32 +6,30 @@
 	<div class="page__intro">
 		{{post.content}}
 	</div>
-		{% for t in resource_terms %}
-		{% set term = TimberTerm(t)%}
-		<details class="resource__group">
-			<summary>
-				<h3>
-					{{t.name}} ({{term.posts | length}})
-				</h3>
-			</summary>
-			<ul>
-				{% for r in term.posts(-1)%}
-				<li class="resources__item">
-					<a href="{{r.resource_url}}">
-						<h4 class="resource__title">
-							{{r.title}}
-						</h4>
-					</a>
-					<p class="resource__description">
-						{{r.description}}
-					</p>
-					<a href="{{r.resource_url}}" class="resource__link">
-						{{r.resource_url | replace({"https://": "", "http://": "", ".com/": ".com"})}}
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</details>
-		{% endfor %}
+	{% for t in resource_terms %}
+	{% set term = TimberTerm(t)%}
+	<details class="resource__group">
+		<summary>
+			<h3>
+				{{t.name}} ({{term.posts | length}})
+			</h3>
+		</summary>
+		<ul>
+			{% for r in term.posts(-1)%}
+			<li class="resources__item">
+				<h4 class="resource__title">
+					{{r.title}}
+				</h4>
+				<p class="resource__description">
+					{{r.description}}
+				</p>
+				<a href="{{r.resource_url}}" class="resource__link">
+					{{r.resource_url | replace({"https://": "", "http://": "", ".com/": ".com"})}}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</details>
+	{% endfor %}
 </article>
 {% endblock %}

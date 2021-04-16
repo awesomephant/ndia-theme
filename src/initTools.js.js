@@ -1,10 +1,15 @@
 function initTools() {
   const toolbar = document.querySelector(".toolbar");
-  const options = toolbar.querySelectorAll("input")
-  options.forEach(o => {
-    o.addEventListener("change", e => {
-      const setting = o.getAttribute("name")
-      document.body.setAttribute(`data-${setting}`, o.getAttribute("value"))
+  const groups = toolbar.querySelectorAll(".options-group")
+  groups.forEach(group => {
+    const options = group.querySelectorAll("input")
+    const setting = group.getAttribute("data-setting")
+    options.forEach(o => {
+      o.addEventListener("change", e => {
+        const value = o.getAttribute("value")
+        document.cookie = `${setting}=${value}; samesite=strict;path=/`;
+        document.body.setAttribute(`data-${setting}`, value)
+      })
     })
   })
 

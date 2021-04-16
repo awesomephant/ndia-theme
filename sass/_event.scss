@@ -14,12 +14,19 @@
 }
 .events__item {
   list-style: none;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  [data-spacing="compact"] & {
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+  }
+  [data-spacing="generous"] & {
+    margin-bottom: 1.6em;
+    padding-bottom: 1.6em;
+  }
   &.future {
     @extend .card;
-    padding: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 4em;
   }
   .thumbnail {
     border-top: 1px solid var(--c-stroke);
@@ -41,11 +48,15 @@
     }
   }
   p {
-    font-size: var(--ms-0);
+    @extend %copy;
   }
   .event__date {
-    font-size: var(--ms--1);
+    @extend %copy--small;
     display: block;
+    margin-bottom: .1em;
+    span {
+      margin-right: 1em;
+    }
   }
 }
 .event__header {
@@ -70,20 +81,18 @@
 }
 
 .event__intro {
+  @extend %copy--big;
   padding-top: 0.25em;
-  line-height: 1.2;
-  font-size: var(--ms-1);
 }
 
 .event__description {
-  @extend %bodycopy;
+  @extend %copy;
   margin-bottom: 2em;
 }
 
 .event__status {
-  font-size: var(--ms-0);
-  line-height: 1.3;
-  margin-bottom: .5em;
+  @extend %copy;
+  margin-bottom: 0.5em;
   &:last-child {
     margin-bottom: 0;
   }
@@ -99,7 +108,7 @@
 }
 
 .event__data {
-  max-width: 35rem;
+  max-width: 37rem;
   margin-bottom: 2.5rem;
   .row {
     display: flex;
@@ -109,13 +118,14 @@
     margin-right: 2rem;
   }
   .datum__label {
-    letter-spacing: 0.02em;
-    font-size: var(--ms--1);
-    font-weight: 400;
+    @extend %copy--small;
   }
   .datum__content {
     font-weight: 500;
     font-size: var(--ms-0);
+    span {
+      display: block;
+    }
   }
 }
 
@@ -147,7 +157,7 @@
 }
 
 .person__bio {
-  font-size: var(--ms--1);
+  @extend %copy--small;
 }
 
 .person__job {

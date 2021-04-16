@@ -1,6 +1,10 @@
-.page--content {
+.page__content {
   max-width: $column;
-  margin: 0 auto;  
+  margin: 0 auto;
+  main {
+    @extend %copy;
+    margin-bottom: 1.5em;
+  }
 }
 .page__title {
   font-size: var(--ms-3);
@@ -9,7 +13,7 @@
 }
 
 .page__intro {
-  font-size: var(--ms-0);
+  @extend %copy--big;
   margin-top: -.5em;
   margin-bottom: 1.5em;
 }

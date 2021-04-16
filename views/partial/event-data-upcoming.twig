@@ -1,7 +1,7 @@
 <div class="event__data card event__data--upcoming">
     <div class="row">
         <div class="datum">
-            <span class="datum__label">Event Dates</span>
+            <span class="datum__label">Date and Time</span>
             <p class="datum__content">
                 {% include "/partial/dates.twig" with {dates: {start:post.start, end: post.end}}%}
             </p>
@@ -19,6 +19,19 @@
     </div>
     <div class="card__actions">
         <a href="{{post.registration}}" class="button button--primary">Register now</a>
-        <a href="#1" class="button">Add to calendar</a>
+        <div class="button--tooltip">
+            <button class="button">Add to calendar</button>
+            <div class="tooltip">
+                {% set df = "Ymd\\THisZ"%}
+                {% set note %}
+                <br><br>For details, <a href="{{post.link}}"><b>go to the event page.<b></a>
+                {% endset %}
+                <div class="tooltip__inner">
+                    <a target='_blank' href="https://calendar.google.com/calendar/r/eventedit?text={{post.title | url_encode}}&dates={{post.start | date(df)}}/{{post.end | date(df)}}&details={{post.content | striptags | trim | url_encode}}{{note | url_encode}}&location={{post.location | url_encode}}">Google Calendar</a>
+                    <a href="/calendar/">Outlook</a>
+                    <a href="{{theme.link}}/calendar.php">Apple Calendar</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

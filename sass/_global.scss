@@ -17,6 +17,7 @@ body {
   padding-bottom: 0;
   background: var(--c-background);
   color: var(--c-text);
+  line-height: var(--lh);
   font-family: $sans;
   font-feature-settings: "ss03" 1;
   transition: 160ms;
@@ -43,6 +44,10 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+abbr {
+  text-decoration-thickness: 1px;
+}
+
 summary {
   cursor: pointer;
   display: block;
@@ -65,30 +70,4 @@ summary {
   [open] &:after {
     transform: translateY(-50%) rotate(45deg);
   }
-}
-
-h1 {
-  font-weight: 560;
-  line-height: 1.2;
-  font-size: var(--ms-3);
-}
-
-h2 {
-  margin-bottom: 1rem;
-  font-weight: 560;
-  line-height: 1.2;
-  font-size: var(--ms-2);
-}
-
-h3 {
-  margin-bottom: 0.1rem;
-  font-weight: 560;
-  font-size: var(--ms-1);
-}
-
-h4 {
-  font-weight: 560;
-  font-size: var(--ms-0);
-  line-height: 1.2;
-  margin-bottom: .2em;
 }

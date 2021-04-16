@@ -1,0 +1,163 @@
+%copy {
+  font-size: var(--ms-0);
+  line-height: calc(var(--lh) * 1.16);
+  letter-spacing: 0.018em;
+  word-spacing: 0.01em;
+  font-weight: 400;
+  hyphens: auto;
+
+  [data-spacing="compact"] & {
+    word-spacing: -0.02em;
+    font-stretch: 98%;
+    letter-spacing: 0.015em;
+  }
+  [data-spacing="generous"] & {
+    word-spacing: 0.01em;
+    letter-spacing: 0.02em;
+  }
+
+  @include bp(s) {
+    hyphens: none;
+  }
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin-bottom: 0.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  ul,
+  ol {
+  }
+  ul {
+    list-style: none;
+    padding-left: 1.2em;
+    li {
+      position: relative;
+    }
+    li:before {
+      content: "";
+      width: 0.55em;
+      height: 0.55em;
+      display: block;
+      left: -1em;
+      top: 0.35em;
+      border-radius: 100%;
+      position: absolute;
+      background: var(--c-text);
+    }
+  }
+  li {
+    margin-bottom: 0.5em;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  blockquote {
+    border-left: 5px solid var(--c-text);
+    padding-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+    font-size: var(--ms-2);
+  }
+  strong {
+    font-weight: 585;
+  }
+  a {
+    color: var(--c-link);
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+%copy--big {
+  font-size: var(--ms-1);
+  letter-spacing: 0.015em;
+  word-spacing: 0.01em;
+  font-stretch: 99%;
+  line-height: calc(var(--lh) * 1.1);
+  [data-spacing="compact"] & {
+      font-stretch: 96%;
+      letter-spacing: 0.012em;
+      line-height: calc(var(--lh) * 1.05);
+  }
+}
+
+%copy--small {
+  font-size: var(--ms--1);
+  letter-spacing: 0.012em;
+  word-spacing: 0.01em;
+  font-stretch: 100%;
+  line-height: calc(var(--lh) * 1.1);
+  strong {
+    font-weight: 650;
+  }
+  p {
+    max-width: 38em;
+  }
+}
+
+body {
+  --ratio: 1.3;
+  &[data-font-size="small"] {
+    --ms-0: clamp(1rem, calc(1.2vw + 0.2rem), 1.2rem);
+  }
+  &[data-font-size="medium"] {
+    --ms-0: clamp(1.1rem, calc(1.5vw + 0.2rem), 1.3rem);
+  }
+  &[data-font-size="large"] {
+    --ms-0: clamp(1.1rem, calc(1.6vw + 0.2rem), 1.5rem);
+  }
+  &[data-font-size="extra-large"] {
+    --ms-0: clamp(1.5rem, calc(2vw + 0.3rem), 1.7rem);
+  }
+
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
+  --ms-2: calc(var(--ms-1) * var(--ratio));
+  --ms-3: calc(var(--ms-2) * var(--ratio));
+  --ms-4: calc(var(--ms-3) * var(--ratio));
+  --ms-5: calc(var(--ms-4) * var(--ratio));
+  --ms-6: calc(var(--ms-5) * var(--ratio));
+  --ms-7: calc(var(--ms-6) * var(--ratio));
+}
+
+h1 {
+  font-weight: 560;
+  line-height: calc(var(--lh) * 0.91);
+  font-size: var(--ms-3);
+  font-stretch: 98%;
+}
+
+h2 {
+  font-stretch: 98%;
+  margin-bottom: 0.4em;
+  font-weight: 540;
+  line-height: calc(var(--lh) * 1);
+  font-size: var(--ms-2);
+}
+
+h3 {
+  margin-bottom: 0.1em;
+  font-stretch: 98%;
+  font-weight: 550;
+  font-size: var(--ms-1);
+}
+
+h4 {
+  font-weight: 560;
+  font-size: var(--ms-0);
+  line-height: var(--lh);
+  letter-spacing: 0.004em;
+  word-spacing: 0.01em;
+  margin-bottom: 0.1em;
+}

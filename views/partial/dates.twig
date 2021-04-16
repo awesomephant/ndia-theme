@@ -15,9 +15,11 @@
 
 {% if d1 == d2 %}
 {# Both dates on the same day #}
-<span>{{dates.end | date("j F Y")}}, {{dates.start | date("H:i")}}–{{dates.end | date("H:i T") | replace({"+0000": ""})}}</span>
+<span>{{dates.end | date("l, j F Y")}}</span>
+<span>
+    {{dates.start | date("g:ia")}} – {{dates.end | date("g:ia T") | replace({"+0000": ""})}}
+</span>
 {% else %}
-
 <span>{{dates.start | date("d F")}}</span> — <span>{{dates.end | date("d F Y")}}</span>
 {% endif %}
 {% endif %}
