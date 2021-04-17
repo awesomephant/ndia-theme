@@ -34,7 +34,10 @@ a {
 }
 
 .skip-link {
-  display: none;
+  text-decoration: underline;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 }
 
 ::selection {

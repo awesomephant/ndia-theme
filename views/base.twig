@@ -7,10 +7,10 @@
 {% endblock %}
 
 <body class="{{body_class}}" data-spacing="{{setting_spacing}}" data-font-size="{{setting_font_size}}" data-colour="{{setting_colour}}" data-template="base.twig">
-	<a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
 	{% include "partial/debug.twig"%}
 	<header class="header">
 		{% block header %}
+		<a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
 		<h1 class="header__title" role="banner">
 			<a href="{{site.url}}" rel="home" title="Home">
 			{% include "partial/logo.svg" %}
@@ -18,8 +18,7 @@
 		</h1>
 		{% endblock %}
 		<nav class="nav" role="navigation">
-			<span>Menu</span>
-			{% include "menu.twig" with {'items': menu.get_items} %}
+			{% include "menu.twig" with {'items': menu_primary.get_items} %}
 		</nav>
 		{% include "toolbar.twig" %}
 	</header>

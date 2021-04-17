@@ -3,10 +3,7 @@
 {% block content %}
 <article class="page__content">
 	<main>
-		<p>
-			<strong>Neurodiversity in Albertopolis</strong> (NDIA) is a network of neurodiverse staff and students from different institutions around Exhibition Road, London. We come together to support each other and work towards an inclusive environment for neurodiverse people across our organisations.
-		</p>
-		{{content}}
+		{{post.content}}
 	</main>
 	<ul class="events--future">
 		{% for e in future_events %}

@@ -12,7 +12,8 @@
 
 
     <nav class="footer__nav" role="navigation">
-        {% include "menu.twig" with {'items': menu.get_items} %}
+        {% include "menu.twig" with {'items': menu_primary.get_items} %}
+        {% include "menu.twig" with {'items': menu_secondary.get_items} %}
     </nav>
     <p>
         © {{"now"|date('Y')}}

@@ -43,6 +43,10 @@
 
 .footer__nav {
   margin-bottom: 1em;
+  display: flex;
+  ul {
+    margin-right: 2em;
+  }
   li {
     list-style: none;
   }

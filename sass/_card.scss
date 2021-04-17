@@ -1,6 +1,7 @@
 .card {
   border: $bw solid var(--c-stroke);
   border-radius: $br;
+  font-size: var(--ms-0);
   padding: 1.2em;
   display: inline-block;
   background: transparent;
@@ -9,14 +10,12 @@
     padding: 1em;
   }
   & > p {
-    font-size: var(--ms-0);
     margin-bottom: 0.5em;
   }
 }
 .card.card--featured {
-  $green: #000000;
-  border-color: $green;
-  box-shadow: 5px 5px 0px 0px $green;
+  border-color: var(--c-stroke--featured);
+  box-shadow: 5px 5px 0px 0px var(--c-stroke--featured);
 }
 
 .card__actions {

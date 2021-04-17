@@ -32,7 +32,7 @@ Timber::$autoescape = false;
 
 function mk_add_custom_post_counts()
 {
-	$post_types = array("event");
+	$post_types = array("event", "resource");
 	foreach ($post_types as $pt) :
 		$pt_info = get_post_type_object($pt);
 		$num_posts = wp_count_posts($pt);
@@ -111,12 +111,16 @@ class NDIASite extends Timber\Site
 		$context['future_events'] = Timber::get_posts($future_event_args);
 		$context['past_events'] = Timber::get_posts($past_event_args);
 		$context['resources'] = Timber::get_posts($resourceArgs);
-		$context['menu']  = new Timber\Menu();
+
+		$context['menu_primary']  = new Timber\Menu("primary");
+		$context['menu_secondary']  = new Timber\Menu("secondary");
+
 		$context['site']  = $this;
+
 		$context['is_home']  = is_front_page();
 		$context['setting_font_size']  = isset($_COOKIE["font-size"]) ? $_COOKIE["font-size"] : "medium";
-		$context['setting_spacing']  = isset($_COOKIE["spacing"]) ? $_COOKIE["spacing"]: "medium";
-		$context['setting_colour']  =  isset($_COOKIE["colour"]) ? $_COOKIE["colour"]: "light-contrast";
+		$context['setting_spacing']  = isset($_COOKIE["spacing"]) ? $_COOKIE["spacing"] : "medium";
+		$context['setting_colour']  =  isset($_COOKIE["colour"]) ? $_COOKIE["colour"] : "light-contrast";
 		$context['resource_terms']  = $resource_terms;
 
 		return $context;
@@ -137,6 +141,8 @@ class NDIASite extends Timber\Site
 			)
 		);
 		add_theme_support('menus');
+		register_nav_menu("primary", "Header");
+		register_nav_menu("secondary", "Footer");
 	}
 
 	public function add_to_twig($twig)
