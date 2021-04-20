@@ -35,6 +35,32 @@
   }
 }
 
+.resource__group {
+  summary {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+  .group__title:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    display: block;
+    font-size: 40px;
+    font-weight: 450;
+    transform-origin: center;
+    transition: 100ms;
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+  }
+  &[open] .group__title:after {
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
 .resource__description {
   @extend %copy;
 }

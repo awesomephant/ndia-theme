@@ -6,8 +6,6 @@
 
 <article class="event" id="post-{{ post.ID }}">
 	<header class="event__header">
-		<h1 class="event__title">{{ post.title }}</h1>
-		<p class="event__intro">{{post.short_description}}</p>
 		{% set img = post.thumbnail%}
 		<figure class="event__thumbnail">
 			<img src="{{img | resize (500)}}" srcset="{{img | resize (500) | towebp}} 500w, {{img | resize (1000) | towebp}} 1000w, {{img | resize (1500) | towebp}} 1500w" alt="{{img.alt}}">
@@ -15,6 +13,8 @@
 			<figcaption>{{img.caption}}</figcaption>
 			{% endif %}
 		</figure>
+		<h2 class="page__title">{{ post.title }}</h2>
+		<p class="page__intro">{{post.short_description}}</p>
 	</header>
 	<div class="event__copy">
 		{% if now < start %} {% include "/partial/event-data-upcoming.twig" %} {% endif %} {% if now> end %}
@@ -28,26 +28,30 @@
 			<section class="event__people">
 				<h3>Participants</h3>
 				{% for p in people %}
-				<details class="person">
-					<summary>
-						<span class="person__name">
-							{{p.title}}
-						</span>
-						<p class="person__job">
-							{% if p.job != ""%}
-							{{p.job}},
-							{% endif %}
-							{% if p.institution != ""%}
-							<span class="institution">{{p.institution}}</span>
-							{% endif %}
-						</p>
-					</summary>
+				<aside class="person">
+					<h4 class="person__name">
+						{% if p.personal_website %}
+						<a href="{{p.personal_website}}">{{p.title}}</a>
+						{% else %}
+						{{p.title}}
+						{% endif %}
+					</h4>
+					<p class="person__job">
+						{% if p.job != ""%}
+						{{p.job}}
+						{% endif %}
+						{% if p.institution != ""%}
+						<span class="institution">{{p.institution}}</span>
+						{% endif %}
+					</p>
+					{% if p.bio == "abc" %}
 					<div class="person__bio">
 						<p>
 							{{p.bio}}
 						</p>
 					</div>
-				</details>
+					{% endif %}
+				</aside>
 				{% endfor %}
 			</section>
 			{% endif %}

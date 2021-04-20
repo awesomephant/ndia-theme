@@ -50,27 +50,3 @@ button {
 abbr {
   text-decoration-thickness: 1px;
 }
-
-summary {
-  cursor: pointer;
-  display: block;
-  position: relative;
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-  &:after {
-    content: "+";
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    transform-origin: center;
-    transition: 100ms;
-  }
-  [open] &:after {
-    transform: translateY(-50%) rotate(45deg);
-  }
-}

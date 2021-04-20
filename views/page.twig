@@ -2,6 +2,9 @@
 
 {% block content %}
 <article class="page__content">
-	<h2>{{post.title}}</h2>
+	<h2 class="page__title">{{post.title}}</h2>
+	<main>
+		{{post.content}}
+	</main>
 </article>
 {% endblock %}

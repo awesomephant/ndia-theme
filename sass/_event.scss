@@ -3,6 +3,9 @@
 .events {
   max-width: $column;
   margin: 0 auto;
+  h2 {
+    margin-bottom: 0.5em;
+  }
 }
 .events--past {
   .events__item {
@@ -53,7 +56,7 @@
   .event__date {
     @extend %copy--small;
     display: block;
-    margin-bottom: .1em;
+    margin-bottom: 0.1em;
     span {
       margin-right: 1em;
     }
@@ -69,6 +72,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: block;
+  max-width: 35em;
   img {
     display: block;
     max-width: 100%;
@@ -76,6 +80,7 @@
   }
   figcaption {
     display: block;
+    opacity: .7;
     padding-top: 0.5rem;
   }
 }
@@ -133,39 +138,41 @@
   max-width: $column;
   margin: 0 auto;
   h3 {
-    font-size: var(--ms-2);
-    margin-bottom: 1rem;
-    font-weight: 550;
+    margin-bottom: 1em;
   }
   ul {
     list-style: none;
   }
 }
 .person {
-  font-size: var(--ms-0);
-  margin-bottom: 0.75rem;
-  summary {
-    cursor: pointer;
-    display: block;
-    margin-bottom: 0.5rem;
+  h4 {
+    margin-top: 0;
   }
+  @extend %copy;
+  margin-bottom: 1em;
+  line-height: var(--lh);
 }
-.person__name {
-  font-weight: 550;
-  display: block;
-  margin-bottom: -0.1em;
+
+.person {
+}
+h4.person__name {
+  margin-bottom: -0em;
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    &:after {
+      content: "↗";
+      position: absolute;
+    }
+  }
 }
 
 .person__bio {
   @extend %copy--small;
+  margin-top: -0.4em;
 }
 
 .person__job {
-  font-weight: 420;
-  font-size: var(--ms--0);
-  .institution {
-    white-space: nowrap;
-  }
   span {
     display: block;
   }

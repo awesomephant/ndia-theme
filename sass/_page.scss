@@ -8,12 +8,11 @@
 }
 .page__title {
   font-size: var(--ms-3);
-  font-weight: 500;
   margin-bottom: 1em;
 }
 
 .page__intro {
   @extend %copy--big;
-  margin-top: -.5em;
+  margin-top: -1.5em;
   margin-bottom: 1.5em;
 }

@@ -13,9 +13,9 @@
 
 [data-colour="light-muted"] {
   --c-background: rgb(247, 228, 203);
-  --c-text: rgb(0, 0, 0);
-  --c-stroke: rgba(0, 0, 0, 0.925);
-  --c-stroke--featured: rgba(52, 76, 143, 0.925);
+  --c-text: rgba(0, 0, 0, 0.95);
+  --c-stroke: rgba(0, 0, 0, 0.95);
+  --c-stroke--featured: rgb(0, 0, 0.95);
   --c-link: rgb(0, 48, 182);
   --c-focus: rgb(83, 106, 170);
   --c-shade: rgba(0, 0, 0, 0.103);
@@ -23,19 +23,24 @@
 }
 
 [data-colour="dark-contrast"] {
-  --c-background: rgb(3, 3, 3);
+  --c-background: rgb(15, 15, 15);
   --c-shade: rgba(255, 255, 255, 0.075);
-  --c-stroke: rgb(255, 255, 255);
-  --c-stroke--featured: rgb(255, 230, 2);
-  --c-text: rgb(246, 247, 253);
+  --c-stroke: rgb(221, 221, 221);
+  --c-stroke--featured: rgb(173, 188, 255);
+  --c-text: rgb(248, 249, 255);
   --c-link: rgb(152, 176, 255);
   --c-event-upcoming: rgba(245, 245, 245, 0.055);
+  --c-focus: rgb(106, 145, 255);
+  img {
+    filter: brightness(.9);
+  }
 }
 [data-colour="dark-muted"] {
-  --c-background: rgb(24, 25, 29);
+  --c-background: rgb(22, 22, 22);
   --c-shade: rgb(9, 9, 14);
-  --c-stroke: rgb(117, 138, 184);
-  --c-text: rgb(153, 169, 190);
+  --c-stroke: rgb(180, 181, 184);
+  --c-text: rgb(175, 175, 175);
+  --c-stroke--featured: rgb(106, 133, 168);
   --c-link: rgb(152, 176, 255);
   --c-event-upcoming: rgba(0, 0, 0, 0.151);
 }

@@ -2,20 +2,22 @@
 
 {% block content %}
 <article class="resources">
-	<h2>{{post.title}}</h2>
+	<h2 class="page__title">{{post.title}}</h2>
 	<div class="page__intro">
 		{{post.content}}
 	</div>
 	{% for t in resource_terms %}
 	{% set term = TimberTerm(t)%}
+	{% set items = term.posts(-1)%}
+	{% if items | length > 0 %}
 	<details class="resource__group">
-		<summary>
-			<h3>
+		<summary class="summary">
+			<h3 class="group__title">
 				{{t.name}} ({{term.posts | length}})
 			</h3>
 		</summary>
 		<ul>
-			{% for r in term.posts(-1)%}
+			{% for r in items %}
 			<li class="resources__item">
 				<h4 class="resource__title">
 					{{r.title}}
@@ -30,6 +32,7 @@
 			{% endfor %}
 		</ul>
 	</details>
+	{% endif %}
 	{% endfor %}
 </article>
 {% endblock %}

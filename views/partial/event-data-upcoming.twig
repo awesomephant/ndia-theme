@@ -28,8 +28,6 @@
                 {% endset %}
                 <div class="tooltip__inner">
                     <a target='_blank' href="https://calendar.google.com/calendar/r/eventedit?text={{post.title | url_encode}}&dates={{post.start | date(df)}}/{{post.end | date(df)}}&details={{post.content | striptags | trim | url_encode}}{{note | url_encode}}&location={{post.location | url_encode}}">Google Calendar</a>
-                    <a href="/calendar/">Outlook</a>
-                    <a href="{{theme.link}}/calendar.php">Apple Calendar</a>
                 </div>
             </div>
         </div>

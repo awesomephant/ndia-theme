@@ -5,7 +5,7 @@
 
 <article class="events">
 	{% if future_events | length > 0%}
-	<h2>Upcoming Events</h2>
+	<h2 class="">Upcoming Events</h2>
 	<ul class="events--future">
 		{% for e in future_events %}
 		{% set start = e.start | date("U")%}
@@ -39,7 +39,7 @@
 		{% include "/partial/newsletter-form.twig" with {label: "Your email"}%}
 	</aside>
 	{% endif %}
-	<h2>Past Events</h2>
+	<h2 class="">Past Events</h2>
 	<ul class="events--past">
 		{% for e in past_events %}
 		<li class="events__item">
