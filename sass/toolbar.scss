@@ -7,15 +7,16 @@
   font-size: var(--ms--1);
   &[open] summary {
     padding-bottom: 1;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.5em;
   }
   summary {
     text-align: left;
     font-size: var(--ms-0);
     font-weight: 500;
     cursor: pointer;
-    display: flex;
-    display: none;
+    @include bp(m) {
+      display: none;
+    }
     &:hover,
     &:focus {
       text-decoration: underline;
@@ -25,20 +26,34 @@
   .controls {
     width: 100%;
     display: flex;
+    flex-flow: column;
+    @include bp(m) {
+      flex-flow: row;
+    }
   }
 }
 
 .options-group {
   flex-grow: 1;
-  margin-right: 1rem;
+  margin-bottom: 1em;
+  @include bp(m) {
+    margin-bottom: 0;
+    margin-right: 1em;
+  }
   &:last-of-type {
     margin-right: 0;
   }
   .options {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
     border: $border-width solid var(--c-stroke);
     border-radius: $border-radius-small;
-    box-shadow: 0 2px 0px 1px rgba(black, .1);
-    overflow: hidden;
+    box-shadow: 0 2px 0px 1px rgba(black, 0.1);
+    @include bp(m) {
+      flex-flow: column;
+      flex-wrap: nowrap;
+    }
     &:focus-within {
       box-shadow: 0 0 0px $focus-outline-width var(--c-focus);
     }
@@ -53,24 +68,55 @@
   .theme-indicator {
     width: 1.6rem;
   }
+  .options--spacing label {
+    flex-basis: auto;
+    border-bottom: 0;
+    &:nth-of-type(2) {
+      border-right: inherit;
+    }
+    @include bp(m){
+      border-right: 0 !important;
+      border-bottom: inherit;
+    }
+  }
   label {
     text-align: left;
+    flex-grow: 1;
+    flex-basis: 50%;
     padding: 0.5em;
+    padding-bottom: 0.4em;
     display: block;
-    border-bottom: $border-width solid var(--c-stroke);
     position: relative;
     cursor: pointer;
     font-size: var(--ms--1);
     font-weight: 400;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    &:hover,
-    &:focus {
-      background: var(--c-background-shade);
+    border-right: $border-width solid var(--c-stroke);
+    border-bottom: $border-width solid var(--c-stroke);
+    &:nth-of-type(3) {
+      border-bottom: 0;
+    }
+    &:nth-of-type(2n) {
+      border-right: 0;
     }
     &:last-of-type {
       border-bottom: 0;
+      border-right: 0;
+    }
+    @include bp(m) {
+      border-bottom: $border-width solid var(--c-stroke);
+      border-right: 0;
+      &:nth-of-type(3) {
+        border-bottom: inherit;
+      }
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
+    &:hover,
+    &:focus {
+      background: var(--c-background-shade);
     }
   }
   svg {

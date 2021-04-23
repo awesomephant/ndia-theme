@@ -13,8 +13,12 @@ table {
 }
 
 body {
-  padding: 2%;
+  padding: 1rem;
   padding-bottom: 0;
+  @include bp(s){
+    padding: 2%;
+    padding-bottom: 0;
+  }
   background: var(--c-background);
   color: var(--c-text);
   line-height: var(--lh);

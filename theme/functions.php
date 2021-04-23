@@ -63,6 +63,7 @@ class NDIASite extends Timber\Site
 
 		add_action('wp_print_styles', 'mk_remove_wp_css');
 		add_action('dashboard_glance_items', 'mk_add_custom_post_counts');
+
 		remove_action('wp_head', 'print_emoji_detection_script', 7);
 		remove_action('wp_print_styles', 'print_emoji_styles');
 

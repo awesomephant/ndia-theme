@@ -7,12 +7,15 @@
   margin-bottom: 1.5em;
 }
 .page__title {
-  font-size: var(--ms-3);
-  margin-bottom: 1em;
+  margin-bottom: .25em;
+  font-size: var(--ms-3);  @include bp(m){
+    margin-bottom: .5em;
+  }
+
 }
 
 .page__intro {
   @extend %copy--big;
-  margin-top: -1.5em;
+  margin-top: -.5em;
   margin-bottom: 1.5em;
 }

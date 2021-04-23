@@ -1,7 +1,10 @@
 .header {
   max-width: $column;
   margin: 0 auto;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
+  @include bp(m){
+    margin-bottom: 4em;
+  }
 }
 
 .header__title {
@@ -25,7 +28,10 @@
   margin-top: 6rem;
   position: relative;
   background-repeat: no-repeat;
-  background-position: left 0px bottom -100px;
+  background-position: left 0px bottom -5%;
+  @include bp(s){
+    background-position: left 0px bottom -25%;
+  }
 
   .newsletter {
     margin-bottom: 2.5em;
@@ -72,6 +78,7 @@
   }
   .scroll {
     display: inline-flex;
+    border-radius: $border-radius-small;
     border: $border-width solid var(--c-stroke);
     box-shadow: 0 2px 0px 1px rgba(black, 0.1);
   }
@@ -82,6 +89,8 @@
     font-size: var(--ms--1);
     background: var(--c-background);
     color: var(--c-text);
+    border-top-left-radius: $border-radius-small;
+    border-bottom-left-radius: $border-radius-small;
     &:focus {
       position: relative;
       z-index: 1000;
