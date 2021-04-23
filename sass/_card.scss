@@ -1,6 +1,6 @@
 .card {
-  border: $bw solid var(--c-stroke);
-  border-radius: $br;
+  border: $border-width solid var(--c-stroke);
+  border-radius: $border-radius;
   font-size: var(--ms-0);
   padding: 1.2em;
   display: inline-block;

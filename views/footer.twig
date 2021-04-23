@@ -1,22 +1,21 @@
-<footer class="footer">
+<footer class="footer" tabindex="-1" style="background-image: url({{theme.link}}/assets/logo.svg)">
     {% if not is_home %}
-    <section>
+    <div class="footer__section">
         <p>
             <strong>Neurodiversity in Albertopolis (<abbr title="Neurodiversity in Albertopolis">NDIA</abbr>)</strong> is a network of neurodiverse staff and students from different institutions around Exhibition Road, London. We come together to support each other and work towards an inclusive environment for neurodiverse people across our organisations.
         </p>
-    </section>
+    </div>
     {% endif %}
-    <section>
-        {% include "/partial/newsletter-form.twig" with {label: "Join our mailing list for updates on upcoming events and other news."}%}
-    </section>
 
+    <div class="footer__section">
+        {% include "/partial/newsletter-form.twig" with {label: "Join our mailing list for updates on upcoming events and other news.", prefix: "footer"}%}
+    </div>
 
-    <nav class="footer__nav" role="navigation">
+    <nav class="footer__nav">
         {% include "menu.twig" with {'items': menu_primary.get_items} %}
         {% include "menu.twig" with {'items': menu_secondary.get_items} %}
     </nav>
     <p>
         © {{"now"|date('Y')}}
     </p>
-    {% include "/partial/pattern.svg"%}
 </footer>

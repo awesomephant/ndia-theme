@@ -3,9 +3,9 @@
 {% block content %}
 {% set now = "now" | date("U")%}
 
-<article class="events">
+<div class="events">
 	{% if future_events | length > 0%}
-	<h2 class="">Upcoming Events</h2>
+	<h2 class="page__title">Upcoming Events</h2>
 	<ul class="events--future">
 		{% for e in future_events %}
 		{% set start = e.start | date("U")%}
@@ -36,10 +36,10 @@
 	{% else %}
 	<aside class="card card--featured no-events">
 		<p>There are no events scheduled right now.<br>Sign up to our mailing list for updates.</p>
-		{% include "/partial/newsletter-form.twig" with {label: "Your email"}%}
+		{% include "/partial/newsletter-form.twig" with {label: "Your email", prefix: "noevents"}%}
 	</aside>
 	{% endif %}
-	<h2 class="">Past Events</h2>
+	<h2 class="page__title">Past Events</h2>
 	<ul class="events--past">
 		{% for e in past_events %}
 		<li class="events__item">
@@ -57,5 +57,5 @@
 		</li>
 		{% endfor %}
 	</ul>
-</article>
+</div>
 {% endblock %}

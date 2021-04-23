@@ -1,6 +1,6 @@
 .button {
   display: inline-block;
-  border-radius: $br;
+  border-radius: $border-radius;
   padding: 0.2em 0.65em;
   padding-top: 0.35em;
   display: flex;
@@ -14,7 +14,7 @@
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-  box-shadow: $bs;
+  box-shadow: $box-shadow;
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -36,7 +36,7 @@
 .tooltip__inner {
   background: var(--c-background);
   border: 1px solid $black;
-  border-radius: $br;
+  border-radius: $border-radius;
   overflow: hidden;
 }
 

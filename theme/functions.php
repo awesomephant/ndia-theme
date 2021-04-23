@@ -47,6 +47,7 @@ function mk_remove_wp_css()
 	wp_deregister_style('wp-block-library');
 	wp_deregister_script('jquery');
 	wp_deregister_script('devicepx');
+	wp_deregister_script( 'wp-embed' );
 }
 
 class NDIASite extends Timber\Site

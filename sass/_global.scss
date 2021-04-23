@@ -30,7 +30,7 @@ a {
 }
 
 *:focus {
-  outline: 4px solid var(--c-focus);
+  outline: $focus-outline-width solid var(--c-focus);
 }
 
 .skip-link {

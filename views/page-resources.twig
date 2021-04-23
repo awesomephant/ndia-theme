@@ -26,7 +26,7 @@
 					{{r.description}}
 				</p>
 				<a href="{{r.resource_url}}" class="resource__link">
-					{{r.resource_url | replace({"https://": "", "http://": "", ".com/": ".com"})}}
+					{{r.resource_url | replace({"https://": "", "http://": ""})}}
 				</a>
 			</li>
 			{% endfor %}

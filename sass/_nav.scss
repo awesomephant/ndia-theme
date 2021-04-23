@@ -16,16 +16,21 @@
   & > ul {
     display: inline-flex;
     font-weight: 400;
-    border: $bw solid var(--c-stroke);
-    border-radius: $br-small;
+    border: $border-width solid var(--c-stroke);
+    border-radius: $border-radius-small;
     box-shadow: 0 2px 0px 1px rgba(black, .1);
-    overflow: hidden;
     // justify-content: center;
   }
   li {
     display: block;
     list-style: none;
+    &:first-of-type a {
+      border-top-left-radius: $border-radius-small;
+      border-bottom-left-radius: $border-radius-small;
+    }
     &:last-of-type a {
+      border-top-right-radius: $border-radius-small;
+      border-bottom-right-radius: $border-radius-small;
       border-right: 0;
     }
   }
@@ -33,11 +38,13 @@
     display: block;
     padding: 0.5em 0.75em;
     padding-bottom: 0.35em;;
-    border-right: $bw solid var(--c-stroke);
+    border-right: $border-width solid var(--c-stroke);
     &:hover,
     &:focus {
       text-decoration: underline;
       background: var(--c-background-shade);
+      position: relative;
+      z-index: 1000;
     }
   }
   .current-menu-item a {

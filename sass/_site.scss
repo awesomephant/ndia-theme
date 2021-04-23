@@ -24,16 +24,19 @@
   margin: 0 auto;
   margin-top: 6rem;
   position: relative;
-  overflow-y: hidden;
-  section {
-    margin-bottom: 0.5em;
-  }
+  background-repeat: no-repeat;
+  background-position: left 0px bottom -100px;
+
   .newsletter {
     margin-bottom: 2.5em;
   }
   .newsletter label {
     margin-bottom: 0.5em;
   }
+}
+
+.footer__section {
+  margin-bottom: 0.5em;
 }
 
 .footer__pattern {
@@ -69,9 +72,7 @@
   }
   .scroll {
     display: inline-flex;
-    border: $bw solid var(--c-stroke);
-    border-radius: $br-small;
-    overflow: hidden;
+    border: $border-width solid var(--c-stroke);
     box-shadow: 0 2px 0px 1px rgba(black, 0.1);
   }
   .email {
@@ -81,6 +82,10 @@
     font-size: var(--ms--1);
     background: var(--c-background);
     color: var(--c-text);
+    &:focus {
+      position: relative;
+      z-index: 1000;
+    }
     &::placeholder {
       opacity: 0.75;
     }

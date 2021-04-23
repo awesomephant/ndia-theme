@@ -2,9 +2,10 @@
 
 {% block content %}
 <article class="page__content">
-	<main>
+	<h2 class="page__title">{{site.title}}</h2>
+	<div>
 		{{post.content}}
-	</main>
+	</div>
 	<ul class="events--future">
 		{% for e in future_events %}
 		{% set start = e.start | date("U")%}
