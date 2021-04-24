@@ -4,67 +4,74 @@
     </summary>
     <div class="controls">
         <div class="options-group" data-setting="font-size">
-            <span class="label" id="font-size-label">Font Size</span>
-            <div class="options" aria-labelledby="font-size-label">
-                <input {% if setting_font_size=="small" %}checked{% endif %} type="radio" id="font-size-small" name="font-size" value="small">
-                <label for="font-size-small">Small</label>
+            <fieldset>
+                <legend class="label">Font Size</legend>
+                <div class="options">
+                    <input {% if setting_font_size=="small" %}checked{% endif %} type="radio" id="font-size-small" name="font-size" value="small">
+                    <label for="font-size-small">Small</label>
 
-                <input {% if setting_font_size=="medium" %}checked{% endif %} type="radio" id="font-size-medium" name="font-size" value="medium">
-                <label for="font-size-medium">Medium</label>
+                    <input {% if setting_font_size=="medium" %}checked{% endif %} type="radio" id="font-size-medium" name="font-size" value="medium">
+                    <label for="font-size-medium">Medium</label>
 
-                <input {% if setting_font_size=="large" %}checked{% endif %} type="radio" id="font-size-large" name="font-size" value="large">
-                <label for="font-size-large">Large</label>
+                    <input {% if setting_font_size=="large" %}checked{% endif %} type="radio" id="font-size-large" name="font-size" value="large">
+                    <label for="font-size-large">Large</label>
 
-                <input {% if setting_font_size=="extra-large" %}checked{% endif %} type="radio" id="font-size-extra-large" name="font-size" value="extra-large">
-                <label for="font-size-extra-large">Extra Large</label>
-            </div>
+                    <input {% if setting_font_size=="extra-large" %}checked{% endif %} type="radio" id="font-size-extra-large" name="font-size" value="extra-large">
+                    <label for="font-size-extra-large">Extra Large</label>
+                </div>
+            </fieldset>
         </div>
         <div class="options-group" data-setting="spacing">
-            <span class="label" id="spacing-label">Spacing</span>
-            <div class="options options--spacing" aria-labelledby="spacing-label">
-                <input {% if setting_spacing=="compact" %}checked{% endif %} type="radio" id="spacing-compact" name="spacing" value="compact">
-                <label for="spacing-compact">Compact</label>
+            <fieldset>
 
-                <input {% if setting_spacing=="medium" %}checked{% endif %} type="radio" id="spacing-medium" name="spacing" value="medium">
-                <label for="spacing-medium">Medium</label>
+                <legend class="label">Spacing</legend>
+                <div class="options options--spacing">
+                    <input {% if setting_spacing=="compact" %}checked{% endif %} type="radio" id="spacing-compact" name="spacing" value="compact">
+                    <label for="spacing-compact">Compact</label>
 
-                <input {% if setting_spacing=="generous" %}checked{% endif %} type="radio" id="spacing-generous" name="spacing" value="generous">
-                <label for="spacing-generous">Generous</label>
-            </div>
+                    <input {% if setting_spacing=="medium" %}checked{% endif %} type="radio" id="spacing-medium" name="spacing" value="medium">
+                    <label for="spacing-medium">Medium</label>
+
+                    <input {% if setting_spacing=="generous" %}checked{% endif %} type="radio" id="spacing-generous" name="spacing" value="generous">
+                    <label for="spacing-generous">Generous</label>
+                </div>
+            </fieldset>
         </div>
         <div class="options-group" data-setting="colour">
-            <span class="label" id="colours-label">Colours</span>
-            <div class="options" aria-labelledby="colours-label">
-                <input {%if setting_colour=="light-contrast" %}checked{% endif %} type="radio" id="color-light-contrast" name="colour" value="light-contrast">
-                <label for="color-light-contrast">
-                    <span>Light/High Contrast</span>
-                    {% include "/partial/theme-indicator.twig" with {theme: "light-contrast"}%}
-                </label>
+            <fieldset>
+                <legend class="label">Colours</legend>
+                <div class="options">
+                    <input {%if setting_colour=="light-contrast" %}checked{% endif %} type="radio" id="color-light-contrast" name="colour" value="light-contrast">
+                    <label for="color-light-contrast">
+                        <span>Light/High Contrast</span>
+                        {% include "/partial/theme-indicator.twig" with {theme: "light-contrast"}%}
+                    </label>
 
-                <input {%if setting_colour=="light-muted" %}checked{% endif %} type="radio" id="color-light-muted" name="colour" value="light-muted">
-                <label for="color-light-muted">
-                    <span>
-                        Light/Muted
-                    </span>
-                    {% include "/partial/theme-indicator.twig" with {theme: "light-muted"}%}
-                </label>
+                    <input {%if setting_colour=="light-muted" %}checked{% endif %} type="radio" id="color-light-muted" name="colour" value="light-muted">
+                    <label for="color-light-muted">
+                        <span>
+                            Light/Muted
+                        </span>
+                        {% include "/partial/theme-indicator.twig" with {theme: "light-muted"}%}
+                    </label>
 
-                <input {%if setting_colour=="dark-contrast" %}checked{% endif %} type="radio" id="color-dark-contrast" name="colour" value="dark-contrast">
-                <label for="color-dark-contrast">
-                    <span>
-                        Dark/High Contrast
-                    </span>
-                    {% include "/partial/theme-indicator.twig" with {theme: "dark-contrast"}%}
-                </label>
+                    <input {%if setting_colour=="dark-contrast" %}checked{% endif %} type="radio" id="color-dark-contrast" name="colour" value="dark-contrast">
+                    <label for="color-dark-contrast">
+                        <span>
+                            Dark/High Contrast
+                        </span>
+                        {% include "/partial/theme-indicator.twig" with {theme: "dark-contrast"}%}
+                    </label>
 
-                <input {%if setting_colour=="dark-muted" %}checked{% endif %} type="radio" id="color-dark-muted" name="colour" value="dark-muted">
-                <label for="color-dark-muted">
-                    <span>
-                        Dark/Muted
-                    </span>
-                    {% include "/partial/theme-indicator.twig" with {theme: "dark-muted"}%}
-                </label>
-            </div>
+                    <input {%if setting_colour=="dark-muted" %}checked{% endif %} type="radio" id="color-dark-muted" name="colour" value="dark-muted">
+                    <label for="color-dark-muted">
+                        <span>
+                            Dark/Muted
+                        </span>
+                        {% include "/partial/theme-indicator.twig" with {theme: "dark-muted"}%}
+                    </label>
+                </div>
+            </fieldset>
         </div>
     </div>
 </details>

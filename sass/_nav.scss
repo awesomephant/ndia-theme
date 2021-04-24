@@ -1,9 +1,10 @@
 %current {
-  background: var(--c-stroke);
+  background: var(--c-text);
   color: var(--c-background);
+  text-decoration: underline;
   &:hover,
   &:focus {
-    background: var(--c-stroke);
+    background: var(--c-text);
   }
 }
 
@@ -23,7 +24,7 @@
     font-weight: 400;
     border: $border-width solid var(--c-stroke);
     border-radius: $border-radius-small;
-    box-shadow: 0 2px 0px 1px rgba(black, 0.1);
+    box-shadow: 0 3px 2px 1px var(--c-shadow);
   }
   li {
     display: block;

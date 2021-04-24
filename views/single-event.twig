@@ -26,33 +26,35 @@
 			{% set people = post.meta("related_people")%}
 			{% if people | length > 0%}
 			<section class="event__people">
-				<h3>Participants</h3>
-				{% for p in people %}
-				<aside class="person">
-					<h4 class="person__name">
-						{% if p.personal_website %}
-						<a href="{{p.personal_website}}">{{p.title}}</a>
-						{% else %}
-						{{p.title}}
-						{% endif %}
-					</h4>
-					<p class="person__job">
-						{% if p.job != ""%}
-						{{p.job}}
-						{% endif %}
-						{% if p.institution != ""%}
-						<span class="institution">{{p.institution}}</span>
-						{% endif %}
-					</p>
-					{% if p.bio == "abc" %}
-					<div class="person__bio">
-						<p>
-							{{p.bio}}
+				<h2>Participants</h2>
+				<ul>
+
+					{% for p in people %}
+					<li class="person">
+						<h4 class="person__name">
+							{{p.title}}
+						</h4>
+						<p class="person__job">
+							{% if p.job != ""%}
+							{{p.job}}
+							{% endif %}
+							{% if p.institution != ""%}
+							<span class="institution">{{p.institution}}</span>
+							{% endif %}
 						</p>
-					</div>
-					{% endif %}
-				</aside>
-				{% endfor %}
+						{% if p.personal_website %}
+						<a href="{{p.personal_website}}">{{p.personal_website | replace({"https://": "", "http://": "", "www.": ""})}}</a>
+						{% endif %}
+						{% if p.bio == "abc" %}
+						<div class="person__bio">
+							<p>
+								{{p.bio}}
+							</p>
+						</div>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
 			</section>
 			{% endif %}
 	</div>

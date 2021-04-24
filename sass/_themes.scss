@@ -2,6 +2,7 @@
   --c-background: rgb(255, 255, 255);
   --c-background-shade: rgb(241, 239, 236);
   --c-text: rgb(5, 5, 5);
+  --c-shadow: rgba(0, 0, 0, 0.13);  
   --c-stroke: rgb(5, 5, 5);
   --c-stroke--featured: rgb(5, 5, 5);
   --c-link: rgb(0, 48, 182);
@@ -9,42 +10,46 @@
   --c-shade: rgb(109, 102, 95);
   --c-event-upcoming: rgb(231, 236, 243);
   --c-event-past: rgb(247, 244, 239);
-}     
+}
 
 [data-colour="light-muted"] {
-  --c-background: rgb(247, 228, 203);
-  --c-text: rgba(0, 0, 0, 0.95);
+  --c-background: rgb(247, 232, 213);
+  --c-background-shade: rgb(233, 217, 197);
+  --c-shadow: rgba(0, 0, 0, 0.13);  
+  --c-text: rgba(0, 0, 0, 0.918);
   --c-stroke: rgba(0, 0, 0, 0.95);
   --c-stroke--featured: rgb(0, 0, 0.95);
   --c-link: rgb(0, 48, 182);
-  --c-focus: rgb(83, 106, 170);
+  --c-focus: rgb(60, 99, 206);
   --c-shade: rgba(0, 0, 0, 0.103);
   --c-event-upcoming: rgb(243, 236, 227);
 }
 
 [data-colour="dark-contrast"] {
-  --c-background: rgb(15, 15, 15);
+  --c-background: rgb(2, 4, 8);
   --c-shade: rgba(255, 255, 255, 0.075);
-  --c-stroke: rgb(221, 221, 221);
-  --c-stroke--featured: rgb(173, 188, 255);
-  --c-text: rgb(248, 249, 255);
+  --c-stroke: rgb(179, 179, 179);
+  --c-stroke--featured: rgb(255, 181, 199);
+  --c-text: rgb(255, 255, 255);
   --c-link: rgb(152, 176, 255);
   --c-event-upcoming: rgba(245, 245, 245, 0.055);
-  --c-focus: rgb(106, 145, 255);
+  --c-focus: rgb(255, 238, 0);
   img {
-    filter: brightness(.9);
+    filter: brightness(0.9);
   }
 }
 [data-colour="dark-muted"] {
-  --c-background: rgb(22, 22, 22);
-  --c-shade: rgb(9, 9, 14);
-  --c-stroke: rgb(180, 181, 184);
-  --c-text: rgb(175, 175, 175);
+  --c-background: rgb(25, 25, 27);
+  --c-background-shade: rgba(255, 255, 255, 0.034);
+  --c-shadow: black;
+  --c-shade: rgb(0, 0, 0);
+  --c-stroke: rgb(98, 109, 133);
+  --c-text: rgb(204, 215, 240);
   --c-stroke--featured: rgb(106, 133, 168);
+  --c-focus: rgb(255, 184, 52);
   --c-link: rgb(152, 176, 255);
   --c-event-upcoming: rgba(0, 0, 0, 0.151);
 }
-
 
 [data-spacing="compact"] {
   --lh: 1.12;

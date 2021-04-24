@@ -2,7 +2,7 @@
   max-width: $column;
   margin: 0 auto;
   margin-bottom: 1em;
-  @include bp(m){
+  @include bp(m) {
     margin-bottom: 4em;
   }
 }
@@ -17,6 +17,55 @@
   margin-bottom: 2rem;
 }
 
+.site__logo {
+  .cls-1,
+  .cls-3 {
+    isolation: isolate;
+  }
+  .cls-2 {
+    font-size: 22.3px;
+    font-family: Plex, sans-serif;
+    fill: var(--c-text);
+  }
+  .cls-3 {
+    fill: none;
+    stroke: var(--c-text);
+    stroke-miterlimit: 10;
+    stroke-width: .5px;
+    opacity: .7;
+  }
+  .cls-4 {
+    fill: #70bd89;
+  }
+  .cls-10,
+  .cls-4,
+  .cls-5,
+  .cls-6,
+  .cls-7,
+  .cls-8,
+  .cls-9 {
+    mix-blend-mode: multiply;
+  }
+  .cls-5 {
+    fill: #939ed0;
+  }
+  .cls-6 {
+    fill: #ffed00;
+  }
+  .cls-7 {
+    fill: #36a9e1;
+  }
+  .cls-8 {
+    fill: #b17f4a;
+  }
+  .cls-9 {
+    fill: #f6b095;
+  }
+  .cls-10 {
+    fill: #a6a6a5;
+  }
+}
+
 .footer {
   @extend %copy--small;
   border-top: 1px solid var(--c-stroke);
@@ -27,12 +76,20 @@
   margin: 0 auto;
   margin-top: 6rem;
   position: relative;
-  background-repeat: no-repeat;
-  background-position: left 0px bottom -5%;
-  @include bp(s){
-    background-position: left 0px bottom -25%;
+  .logo__container {
+    position: absolute;
+    margin-top: 2em;
+    width: 120%;
+    left: -10%;
+    height: 5em;
+    overflow-y: hidden;
   }
+  .site__logo {
+  }
+  .cls-2 {
+    display: none;
 
+  }
   .newsletter {
     margin-bottom: 2.5em;
   }

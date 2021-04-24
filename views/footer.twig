@@ -1,4 +1,4 @@
-<footer class="footer" tabindex="-1" style="background-image: url({{theme.link}}/assets/logo.svg)">
+<footer class="footer" tabindex="-1">
     {% if not is_home %}
     <div class="footer__section">
         <p>
@@ -18,4 +18,7 @@
     <p>
         © {{"now"|date('Y')}}
     </p>
+    <div class="logo__container">
+        {% include "partial/logo.svg" %}
+    </div>
 </footer>

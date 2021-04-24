@@ -15,7 +15,7 @@
     word-spacing: 0.01em;
     letter-spacing: 0.02em;
   }
-
+  
   @include bp(s) {
     hyphens: none;
   }
@@ -23,7 +23,10 @@
   ul,
   ol,
   blockquote {
-    margin-bottom: 0.5em;
+    margin-bottom: calc(var(--lh) * .4em);
+    [data-spacing="generous"] & {
+      margin-bottom: calc(var(--lh) * .6em);
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -95,7 +98,7 @@
   line-height: calc(var(--lh) * 1.1);
   font-weight: 390;
   hyphens: auto;
-  @include bp(m){
+  @include bp(m) {
     hyphens: none;
   }
   strong {
@@ -114,6 +117,10 @@
   word-spacing: 0.01em;
   font-stretch: 100%;
   line-height: calc(var(--lh) * 1.1);
+  hyphens: auto;
+  @include bp(m) {
+    hyphens: none;
+  }
   strong {
     font-weight: 650;
   }
@@ -125,16 +132,18 @@
 body {
   --ratio: 1.3;
   &[data-font-size="small"] {
-    --ms-0: clamp(.95rem, calc(1.2vw + 0.2rem), 1.2rem);
+    --ratio: 1.2;
+    --ms-0: clamp(0.95rem, calc(1.25vw + 0.2rem), 1.2rem);
   }
   &[data-font-size="medium"] {
+    --ratio: 1.25;
     --ms-0: clamp(1rem, calc(1.5vw + 0.2rem), 1.3rem);
   }
   &[data-font-size="large"] {
-    --ms-0: clamp(1.1rem, calc(1.6vw + 0.2rem), 1.5rem);
+    --ms-0: clamp(1.1rem, calc(1.75vw + 0.2rem), 1.5rem);
   }
   &[data-font-size="extra-large"] {
-    --ms-0: clamp(1.2rem, calc(2vw + 0.3rem), 1.7rem);
+    --ms-0: clamp(1.2rem, calc(2vw + 0.2rem), 1.7rem);
   }
 
   --ms--1: calc(var(--ms-0) / var(--ratio));
