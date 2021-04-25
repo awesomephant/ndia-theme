@@ -34,7 +34,7 @@
 		{% endfor %}
 	</ul>
 	{% else %}
-	<aside class="card card--featured no-events">
+	<aside class="card no-events">
 		<p>There are no events scheduled right now.<br>Sign up to our mailing list for updates.</p>
 		{% include "/partial/newsletter-form.twig" with {label: "Your email", prefix: "noevents"}%}
 	</aside>

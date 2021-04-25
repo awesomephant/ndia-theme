@@ -1,22 +1,17 @@
 .card {
-  border: $border-width solid var(--c-stroke);
+  border: 2px solid var(--c-stroke);
   border-radius: $border-radius;
   font-size: var(--ms-0);
   padding: 1.2em;
   display: inline-block;
   background: transparent;
-  box-shadow: 5px 5px 0px 0px var(--c-stroke);
+  box-shadow: 4px 4px 0px 0px var(--c-stroke);
   [data-spacing="compact"] & {
     padding: 1em;
   }
   & > p {
     margin-bottom: 0.5em;
   }
-}
-.card.card--featured {
-  border-color: var(--c-stroke--featured);
-  box-shadow: 5px 5px 0px 0px var(--c-stroke--featured);
-  max-width: 30em;
 }
 
 .card__actions {
