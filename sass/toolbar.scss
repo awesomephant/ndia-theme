@@ -57,7 +57,9 @@
       flex-flow: column;
       flex-wrap: nowrap;
     }
-    transition: outline-width 100ms;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: outline-width 100ms;
+    }
     &:focus-within {
       outline: $focus-outline-width solid var(--c-focus);
     }
