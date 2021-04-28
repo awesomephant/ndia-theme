@@ -53,12 +53,17 @@
       border-right: $border-width solid var(--c-stroke);
       border-bottom: 0;
     }
+    &:hover {
+      z-index: 1000;
+    }
+    &:focus {
+      z-index: 2000;
+    }
     &:hover,
     &:focus {
       text-decoration: underline;
       background: var(--c-background-shade);
       position: relative;
-      z-index: 1000;
     }
   }
   .current-menu-item a {

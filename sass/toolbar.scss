@@ -57,8 +57,9 @@
       flex-flow: column;
       flex-wrap: nowrap;
     }
+    transition: outline-width 100ms;
     &:focus-within {
-      box-shadow: 0 0 0px $focus-outline-width var(--c-focus);
+      outline: $focus-outline-width solid var(--c-focus);
     }
   }
   .label {
