@@ -15,7 +15,7 @@
     word-spacing: 0.01em;
     letter-spacing: 0.02em;
   }
-  
+
   @include bp(s) {
     hyphens: none;
   }
@@ -23,9 +23,9 @@
   ul,
   ol,
   blockquote {
-    margin-bottom: calc(var(--lh) * .4em);
+    margin-bottom: calc(var(--lh) * 0.4em);
     [data-spacing="generous"] & {
-      margin-bottom: calc(var(--lh) * .6em);
+      margin-bottom: calc(var(--lh) * 0.6em);
     }
     &:last-child {
       margin-bottom: 0;
@@ -67,14 +67,13 @@
   h2 {
     margin-top: 1em;
     margin-bottom: 0.25em;
-    font-size: var(--ms-2);
   }
   h3 {
     margin-top: 2em;
     margin-bottom: 0.25em;
   }
   h4 {
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-bottom: 0.25em;
   }
   strong {
@@ -92,20 +91,17 @@
 
 %copy--big {
   font-size: var(--ms-1);
-  letter-spacing: 0.015em;
-  word-spacing: 0.01em;
-  font-stretch: 99%;
-  line-height: calc(var(--lh) * 1.1);
-  font-weight: 390;
+  font-stretch: 96%;
+  line-height: calc(var(--lh) * 1.01);
+  font-weight: 400;
   hyphens: auto;
   @include bp(m) {
     hyphens: none;
   }
   strong {
-    font-weight: 570;
+    font-weight: 585;
   }
   [data-spacing="compact"] & {
-    font-stretch: 96%;
     letter-spacing: 0.012em;
     line-height: calc(var(--lh) * 1.05);
   }
@@ -132,8 +128,8 @@
 body {
   --ratio: 1.3;
   &[data-font-size="small"] {
-    --ratio: 1.2;
-    --ms-0: clamp(0.95rem, calc(1.25vw + 0.2rem), 1.2rem);
+    --ratio: 1.18;
+    --ms-0: clamp(0.9rem, calc(1.25vw + 0.2rem), 1.15rem);
   }
   &[data-font-size="medium"] {
     --ratio: 1.25;
@@ -159,24 +155,24 @@ body {
 h2 {
   font-size: var(--ms-2);
   line-height: calc(var(--lh) * 0.9);
-  font-weight: 580;
+  font-weight: 600;
   font-stretch: 70%;
   @include bp(m) {
+    font-size: var(--ms-3);
     line-height: calc(var(--lh) * 1);
-    font-stretch: 98%;
+    font-stretch: 96%;
   }
 }
 
 h3 {
-  font-stretch: 98%;
-  font-weight: 555;
-  font-size: var(--ms-1);
+  font-stretch: 96%;
+  font-weight: 500;
+  font-size: var(--ms-2);
+  line-height: calc(var(--lh) * .95);
 }
 
 h4 {
   font-weight: 560;
   font-size: var(--ms-0);
-  line-height: var(--lh);
-  letter-spacing: 0.004em;
-  word-spacing: 0.01em;
+  line-height: calc(var(--lh) * 1);
 }

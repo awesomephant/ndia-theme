@@ -8,6 +8,7 @@
   box-shadow: 4px 4px 0px 0px var(--c-stroke);
   [data-spacing="compact"] & {
     padding: 1em;
+    padding-bottom: .8em;
   }
   & > p {
     margin-bottom: 0.5em;

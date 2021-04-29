@@ -2,7 +2,7 @@
     {% if not is_home %}
     <div class="footer__section">
         <p>
-            <strong>Neurodiversity in Albertopolis (<abbr title="Neurodiversity in Albertopolis">NDIA</abbr>)</strong> is a network of neurodiverse staff and students from different institutions around Exhibition Road, London.
+            {{site.description | replace({"Neurodiversity in Albertopolis": "<strong>Neurodiversity in Albertopolis</strong>"})}}
         </p>
     </div>
     {% endif %}
@@ -15,9 +15,12 @@
         {% include "menu.twig" with {'items': menu_primary.get_items} %}
         {% include "menu.twig" with {'items': menu_secondary.get_items} %}
     </nav>
-    <p>
-        © {{"now"|date('Y')}}
-    </p>
+    <div class="copyright">
+        <p>
+            Header illustration by Roland Ross, site by <a href="https://maxkoehler.com/">MK</a>.
+        </p>
+        <p>© NDIA {{"now"|date('Y')}}.</p>
+    </div>
     <div class="logo__container">
         {% include "partial/logo.svg" %}
     </div>

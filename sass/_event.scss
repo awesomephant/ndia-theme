@@ -17,15 +17,15 @@
 }
 .events__item {
   list-style: none;
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
+  margin-bottom: 1.7em;
+  padding-bottom: 1.7em;
   [data-spacing="compact"] & {
     margin-bottom: 1.2em;
     padding-bottom: 1.2em;
   }
   [data-spacing="generous"] & {
-    margin-bottom: 1.6em;
-    padding-bottom: 1.6em;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
   }
   &.future {
     @extend .card;
@@ -61,6 +61,7 @@
   img {
     display: block;
     max-width: 100%;
+    max-height: 30em;
     border-radius: $border-radius-small;
   }
   figcaption {

@@ -5,8 +5,8 @@
 
 .resources__item {
   list-style: none;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
+  margin-bottom:  calc(var(--lh) * 1.1em);
+  padding-bottom: calc(var(--lh) * 1.1em);
   font-size: var(--ms-0);
   border-bottom: 1px solid black;
   &:last-of-type {
@@ -18,15 +18,12 @@
 .resource__group {
   @extend .card;
   display: block;
+  margin-bottom: 1em;
+  padding-bottom: 0.9em;
   h3 {
     display: flex;
     align-items: flex-start;
-    .chip {
-      margin-left: 0.5em;
-    }
   }
-  margin-bottom: 1em;
-  padding-bottom: 0.8em;
   &[open] {
     padding-bottom: 0;
     h3 {
@@ -40,7 +37,8 @@
     display: block;
     position: relative;
     cursor: pointer;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
   }
@@ -52,17 +50,20 @@
     font-size: 40px;
     font-weight: 450;
     transform-origin: center;
-    transition: 100ms;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: 100ms;
+    }
     top: 50%;
-    transform: translateY(-50%) rotate(0);
+    transform: translateY(-55%) rotate(0);
   }
   &[open] .group__title:after {
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-55%) rotate(45deg);
   }
 }
 
 .resource__description {
   @extend %copy;
+  padding-top: .1em;;
 }
 
 .resource__link {

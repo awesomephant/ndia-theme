@@ -6,7 +6,7 @@
 <div class="events">
 	{% if future_events | length > 0%}
 	<h2 class="page__title">Upcoming Events</h2>
-	<ul class="events--future">
+	<ol class="events--future">
 		{% for e in future_events %}
 		{% set start = e.start | date("U")%}
 		{% set end = e.end | date("U")%}
@@ -32,7 +32,7 @@
 			{% endif %}
 		</li>
 		{% endfor %}
-	</ul>
+	</ol>
 	{% else %}
 	<aside class="card no-events">
 		<p>There are no events scheduled right now.<br>Sign up to our mailing list for updates.</p>
@@ -40,7 +40,7 @@
 	</aside>
 	{% endif %}
 	<h2 class="page__title">Past Events</h2>
-	<ul class="events--past">
+	<ol class="events--past">
 		{% for e in past_events %}
 		<li class="events__item">
 			<span class="event__date">
@@ -56,6 +56,6 @@
 			{% endif %}
 		</li>
 		{% endfor %}
-	</ul>
+	</ol>
 </div>
 {% endblock %}

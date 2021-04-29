@@ -30,6 +30,10 @@ if (!class_exists('Timber')) {
 Timber::$dirname = array('../views');
 Timber::$autoescape = false;
 
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}
+
 function mk_add_custom_post_counts()
 {
 	$post_types = array("event", "resource");
@@ -47,7 +51,7 @@ function mk_remove_wp_css()
 	wp_deregister_style('wp-block-library');
 	wp_deregister_script('jquery');
 	wp_deregister_script('devicepx');
-	wp_deregister_script( 'wp-embed' );
+	wp_deregister_script('wp-embed');
 }
 
 class NDIASite extends Timber\Site
@@ -118,6 +122,7 @@ class NDIASite extends Timber\Site
 		$context['menu_secondary']  = new Timber\Menu("secondary");
 
 		$context['site']  = $this;
+		$context['options'] = get_fields('option');
 
 		$context['is_home']  = is_front_page();
 		$context['setting_font_size']  = isset($_COOKIE["font-size"]) ? $_COOKIE["font-size"] : "medium";

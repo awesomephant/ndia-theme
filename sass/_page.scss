@@ -8,7 +8,6 @@
 }
 .page__title {
   margin-bottom: 0.25em;
-  font-size: var(--ms-3);
   @include bp(m) {
     margin-bottom: 0.5em;
   }
@@ -16,9 +15,9 @@
 
 .page__intro {
   @extend %copy--big;
-  margin-bottom: -.25em;
-  @include bp(m){
-    margin-top: -.5em;
-    margin-bottom: 1.5em;
+  margin-bottom: -0.25em;
+  @include bp(m) {
+    margin-top: -0.75em;
+    margin-bottom: 1.25em;
   }
 }

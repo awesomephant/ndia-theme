@@ -10,16 +10,23 @@
 	{% include "partial/debug.twig"%}
 	<header class="header">
 		{% block header %}
-		<a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
-		<h1 class="header__title">
-			<a href="{{site.url}}" rel="home" title="Home">
-			{% include "partial/logo.svg" %}
-			</a>
-		</h1>
+		<div class="row">
+
+			<h1 class="header__title">
+				<a href="{{site.url}}" rel="home" title="Home">
+					{{site.title}}
+				</a>
+			</h1>
+			<a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
+		</div>
+		<img src="{{TimberImage(options.banner_image).src | resize(600)}}" alt="">
 		{% endblock %}
-		<nav class="nav">
-			{% include "menu.twig" with {'items': menu_primary.get_items} %}
-		</nav>
+		<div class="nav__container">
+			<span class="label" id="nav-label">Menu</span>
+			<nav class="nav" aria-labelledby="nav-label">
+				{% include "menu.twig" with {'items': menu_primary.get_items} %}
+			</nav>
+		</div>
 		{% include "toolbar.twig" %}
 	</header>
 

@@ -20,9 +20,9 @@
     <div class="card__actions">
         {% if post.recording %}
         <p class="event__status">
-            This event is over, but we've published a recording of it.
+            This event is over, but we’ve published a recording of it{% if "vimeo" in post.recording%} on Vimeo{% endif%}{% if "youtube" in post.recording%} on Youtube{% endif %}.
         </p>
-        <a href="{{post.recording}}" class="button button--primary">View Recording</a>
+        <a href="{{post.recording}}" class="button button--primary">Watch the Recording</a>
         {% else %}
         <p class="event__status">
             This event is over. Join our mailing list to be notified when we publish a recording of it.
