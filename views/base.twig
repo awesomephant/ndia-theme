@@ -19,7 +19,10 @@
 			</h1>
 			<a class="skip-link" href="#content">{{ _e( 'Skip to content') }}</a>
 		</div>
-		<img src="{{TimberImage(options.banner_image).src | resize(600)}}" alt="">
+		<div class="site__logo">
+			{% include "/partial/cover-pile.svg" %}
+		</div>
+		<!-- <img src="{{TimberImage(options.banner_image).src | resize(600)}}" alt=""> -->
 		{% endblock %}
 		<div class="nav__container">
 			<span class="label" id="nav-label">Menu</span>

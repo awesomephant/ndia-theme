@@ -44,7 +44,6 @@
                     <input {%if setting_colour=="light-contrast" %}checked{% endif %} type="radio" id="color-light-contrast" name="colour" value="light-contrast">
                     <label for="color-light-contrast">
                         <span>Light/High Contrast</span>
-                        {% include "/partial/theme-indicator.twig" with {theme: "light-contrast"}%}
                     </label>
 
                     <input {%if setting_colour=="light-muted" %}checked{% endif %} type="radio" id="color-light-muted" name="colour" value="light-muted">
@@ -52,7 +51,6 @@
                         <span>
                             Light/Muted
                         </span>
-                        {% include "/partial/theme-indicator.twig" with {theme: "light-muted"}%}
                     </label>
 
                     <input {%if setting_colour=="dark-contrast" %}checked{% endif %} type="radio" id="color-dark-contrast" name="colour" value="dark-contrast">
@@ -60,7 +58,6 @@
                         <span>
                             Dark/High Contrast
                         </span>
-                        {% include "/partial/theme-indicator.twig" with {theme: "dark-contrast"}%}
                     </label>
 
                     <input {%if setting_colour=="dark-muted" %}checked{% endif %} type="radio" id="color-dark-muted" name="colour" value="dark-muted">
@@ -68,7 +65,6 @@
                         <span>
                             Dark/Muted
                         </span>
-                        {% include "/partial/theme-indicator.twig" with {theme: "dark-muted"}%}
                     </label>
                 </div>
             </fieldset>

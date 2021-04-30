@@ -41,51 +41,15 @@
 }
 
 .site__logo {
-  .cls-1,
-  .cls-3 {
-    isolation: isolate;
-  }
-  .cls-2 {
-    font-size: 22.3px;
-    font-family: Plex, sans-serif;
+  width: 110%;
+  margin-left: -5%;
+  margin-top: -2%;
+  margin-bottom: -5%;
+  display: block;
+  position: relative;
+  z-index: -1000;
+  .outline {
     fill: var(--c-text);
-  }
-  .cls-3 {
-    fill: none;
-    stroke: var(--c-text);
-    stroke-miterlimit: 10;
-    stroke-width: 0.5px;
-    opacity: 0.7;
-  }
-  .cls-4 {
-    fill: #70bd89;
-  }
-  .cls-10,
-  .cls-4,
-  .cls-5,
-  .cls-6,
-  .cls-7,
-  .cls-8,
-  .cls-9 {
-    mix-blend-mode: multiply;
-  }
-  .cls-5 {
-    fill: #939ed0;
-  }
-  .cls-6 {
-    fill: #ffed00;
-  }
-  .cls-7 {
-    fill: #36a9e1;
-  }
-  .cls-8 {
-    fill: #b17f4a;
-  }
-  .cls-9 {
-    fill: #f6b095;
-  }
-  .cls-10 {
-    fill: #a6a6a5;
   }
 }
 
@@ -103,15 +67,14 @@
     position: absolute;
     margin-top: 1em;
     width: 120%;
+    height: 8em;
     left: -10%;
-    height: 6em;
     overflow-y: hidden;
   }
-  .site__logo {
+  .outline {
+    fill: var(--c-text);
   }
-  .cls-2 {
-    display: none;
-  }
+
   .newsletter {
     margin-bottom: 2.5em;
   }
@@ -127,7 +90,7 @@
   }
   .copyright {
     p {
-      margin-bottom: .2em;
+      margin-bottom: 0.2em;
     }
   }
 }
@@ -135,7 +98,6 @@
 .footer__section {
   margin-bottom: 0.5em;
 }
-
 
 .footer__nav {
   margin-bottom: 1em;
