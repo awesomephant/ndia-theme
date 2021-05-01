@@ -9,7 +9,10 @@
 }
 
 .nav {
-  font-size: var(--ms--1);
+  font-size: var(--ms-0);
+  @include bp(m){
+    font-size: var(--ms--1);
+  }
   span {
     margin-bottom: 0.3em;
     display: block;
@@ -46,12 +49,16 @@
   }
   a {
     display: block;
-    padding: 0.5em 0.75em;
     padding-bottom: 0.35em;
     border-bottom: $border-width solid var(--c-stroke);
+    padding: 0.5em;
     @include bp(s) {
       border-right: $border-width solid var(--c-stroke);
       border-bottom: 0;
+    }
+    @include bp(m) {
+      padding: 0.5em 0.75em;
+      padding-bottom: .35em;
     }
     &:hover {
       z-index: 1000;

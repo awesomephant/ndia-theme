@@ -1,25 +1,54 @@
 .toolbar {
   font-size: 2rem;
-  text-align: center;
+  text-align: left;
   padding-top: 1.5em;
   display: block;
   max-width: 36em;
-  font-size: var(--ms--1);
+  font-size: var(--ms-0);
+  @include bp(m){
+    font-size: var(--ms--1);
+  }
   &[open] summary {
     padding-bottom: 1;
     padding-bottom: 0.5em;
+    &:after {
+      transform: translateY(-48%) rotate(45deg);
+    }
   }
   summary {
     text-align: left;
     font-size: var(--ms-0);
-    font-weight: 500;
     cursor: pointer;
+    border: $border-width solid var(--c-stroke);
+    border-radius: $border-radius-small;
+    box-shadow: 0 3px 2px 1px var(--c-shadow);
+    padding: 0.5em;
+    padding-top: 0.65em;
+    line-height: 1;
+    margin-bottom: 0.75em;
+    display: inline-block;
+    position: relative;
+    padding-right: 2em;
     @include bp(m) {
       display: none;
     }
     &:hover,
     &:focus {
       text-decoration: underline;
+    }
+    &:after {
+      content: "+";
+      position: absolute;
+      right: 0.35em;
+      display: block;
+      font-size: 1.5em;
+      font-weight: 300;
+      transform-origin: center;
+      top: 50%;
+      transform: translateY(-48%) rotate(0);
+      @media (prefers-reduced-motion: no-preference) {
+        transition: 100ms;
+      }
     }
   }
 
@@ -94,7 +123,6 @@
     display: block;
     position: relative;
     cursor: pointer;
-    font-size: var(--ms--1);
     font-weight: 400;
     display: flex;
     justify-content: space-between;

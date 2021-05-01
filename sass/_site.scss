@@ -15,7 +15,17 @@
     align-items: baseline;
   }
   .skip-link {
+    position: absolute;
+    top: 2.25em;
+    opacity: 0;
     font-size: var(--ms--1);
+    &:focus {
+      opacity: 1;
+    }
+    @include bp(m) {
+      position: static;
+      opacity: 1;
+    }
   }
   img {
     margin-bottom: 1em;
@@ -43,8 +53,8 @@
 .site__logo {
   width: 110%;
   margin-left: -5%;
-  margin-top: -2%;
-  margin-bottom: -5%;
+  margin-top: -1%;
+  margin-bottom: -2.5%;
   display: block;
   position: relative;
   z-index: -1000;
@@ -66,10 +76,18 @@
   .logo__container {
     position: absolute;
     margin-top: 1em;
-    width: 120%;
-    height: 8em;
-    left: -10%;
-    overflow-y: hidden;
+    overflow: hidden;
+    width: 100%;
+    left: -1rem;
+    height: 5em;
+    @include bp(m) {
+      height: 8em;
+      width: 120%;
+      left: -10%;
+    }
+    svg {
+      width: 100%;
+    }
   }
   .outline {
     fill: var(--c-text);

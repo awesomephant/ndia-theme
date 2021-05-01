@@ -92,7 +92,7 @@
 %copy--big {
   font-size: var(--ms-1);
   font-stretch: 96%;
-  line-height: calc(var(--lh) * 1.01);
+  line-height: calc(var(--lh) * 1.05);
   font-weight: 400;
   hyphens: auto;
   @include bp(m) {
@@ -103,7 +103,6 @@
   }
   [data-spacing="compact"] & {
     letter-spacing: 0.012em;
-    line-height: calc(var(--lh) * 1.05);
   }
 }
 
@@ -159,7 +158,7 @@ h2 {
   font-stretch: 70%;
   @include bp(m) {
     font-size: var(--ms-3);
-    line-height: calc(var(--lh) * 1);
+    line-height: calc(var(--lh) * .95);
     font-stretch: 96%;
   }
 }
@@ -168,7 +167,7 @@ h3 {
   font-stretch: 96%;
   font-weight: 500;
   font-size: var(--ms-2);
-  line-height: calc(var(--lh) * .95);
+  line-height: calc(var(--lh) * .9);
 }
 
 h4 {

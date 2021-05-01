@@ -1,5 +1,14 @@
 import Cookies from 'js-cookie';
 
+function toggleToolbar() {
+  const toolbar = document.querySelector(".toolbar");
+  if (window.matchMedia("(max-width: 800px)").matches) {
+    toolbar.removeAttribute("open")
+  } else {
+    toolbar.setAttribute("open", "")
+  }
+}
+
 function initTools() {
   const toolbar = document.querySelector(".toolbar");
   const groups = toolbar.querySelectorAll(".options-group")
@@ -15,15 +24,20 @@ function initTools() {
     })
   })
 
-
   // Set dark/contrast colour theme if user has darkmode enabled and no
   // other colour theme is set. We don't need to do the same for light mode
   // because light/contrast is teh default anyway.
-  
+
   if (window.matchMedia('(prefers-color-scheme: dark)').matches && Cookies.get("colour") == undefined) {
     Cookies.set("colour", "dark-contrast", { secure: true, sameSite: "strict" });
     document.body.setAttribute("data-colour", "dark-contrast")
   }
+
+  toggleToolbar();
+
+  window.addEventListener("resize", () => {
+    toggleToolbar()
+  })
 
 }
 export { initTools };
