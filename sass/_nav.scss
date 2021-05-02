@@ -9,7 +9,7 @@
 }
 
 .nav {
-  font-size: var(--ms-0);
+  margin-bottom: 0;
   @include bp(m){
     font-size: var(--ms--1);
   }

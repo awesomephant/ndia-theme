@@ -15,7 +15,7 @@
 
 .page__intro {
   @extend %copy--big;
-  margin-bottom: -0.25em;
+  margin-bottom: 1em;
   @include bp(m) {
     margin-top: -0.75em;
     margin-bottom: 1.25em;

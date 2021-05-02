@@ -1,22 +1,29 @@
 .toolbar {
   font-size: 2rem;
   text-align: left;
-  padding-top: 1.5em;
   display: block;
   max-width: 36em;
   font-size: var(--ms-0);
-  @include bp(m){
+  padding-top: 1em;
+  @include bp(m) {
+    padding-top: 1.5em;
     font-size: var(--ms--1);
   }
   &[open] summary {
     padding-bottom: 1;
     padding-bottom: 0.5em;
+    &:before {
+      content: "Hide"
+    }
     &:after {
       transform: translateY(-48%) rotate(45deg);
     }
   }
   summary {
     text-align: left;
+    &:before {
+      content: "Show"
+    }
     font-size: var(--ms-0);
     cursor: pointer;
     border: $border-width solid var(--c-stroke);
@@ -25,11 +32,12 @@
     padding: 0.5em;
     padding-top: 0.65em;
     line-height: 1;
-    margin-bottom: 0.75em;
     display: inline-block;
     position: relative;
     padding-right: 2em;
+    margin-bottom: 1em;
     @include bp(m) {
+      margin-bottom: 0.75em;
       display: none;
     }
     &:hover,
@@ -98,7 +106,7 @@
     text-align: left;
     font-weight: normal;
     margin-bottom: 0.3em;
-    font-size: inherit;
+    font-size: var(--ms--1);
   }
   .theme-indicator {
     width: 1.6rem;
