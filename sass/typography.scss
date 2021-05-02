@@ -158,7 +158,7 @@ h2 {
   font-stretch: 70%;
   @include bp(m) {
     font-weight: 600;
-    font-size: var(--ms-3);
+    font-size: var(--ms-4);
     line-height: calc(var(--lh) * .95);
     font-stretch: 96%;
   }

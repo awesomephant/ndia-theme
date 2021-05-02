@@ -6,6 +6,8 @@ const dictionary = [
   ["NHLI", "National Heart and Lung Institute"],
   ["STEM", "Science, Technology, Engineering and Maths"],
   ["2E", "twice-exceptional"],
+  ["WCAG", "Web Content Accessibility Guidelines"],
+  ["SMT", "Senior Management Team"],
 ]
 
 function markAbbreviations() {
