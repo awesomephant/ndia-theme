@@ -11,10 +11,14 @@
         {% include "/partial/newsletter-form.twig" with {label: "Join our mailing list for updates on upcoming events and other news.", prefix: "footer"}%}
     </div>
 
-    <nav class="footer__nav">
-        {% include "menu.twig" with {'items': menu_primary.get_items} %}
-        {% include "menu.twig" with {'items': menu_secondary.get_items} %}
-    </nav>
+    <div class="footer__nav">
+        <nav aria-label="Main">
+            {% include "menu.twig" with {'items': menu_primary.get_items} %}
+        </nav>
+        <nav aria-label="Secondary">
+            {% include "menu.twig" with {'items': menu_secondary.get_items} %}
+        </nav>
+    </div>
     <div class="copyright">
         <p>
             Header illustration by Roland Ross, site by <a href="https://maxkoehler.com/">MK</a>.
