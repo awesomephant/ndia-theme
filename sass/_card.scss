@@ -4,7 +4,6 @@
   font-size: var(--ms-0);
   padding: 1.2em;
   display: inline-block;
-  background: transparent;
   box-shadow: 4px 4px 0px 0px var(--c-stroke);
   [data-spacing="compact"] & {
     padding: 1em;
@@ -15,7 +14,12 @@
   }
   h3 {
     margin-bottom: 0.2em;
+    font-weight: 600;
   }
+}
+
+.card--featured {
+  background: var(--c-featured);
 }
 
 .card__actions {
@@ -41,7 +45,6 @@
     margin-bottom: 0.5em;
   }
   @include bp(m) {
-    margin-bottom: -.1em;
     flex-flow: row;
     align-items: baseline;
   }

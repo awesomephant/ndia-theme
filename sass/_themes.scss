@@ -8,11 +8,11 @@
   --c-link: rgb(0, 48, 182);
   --c-focus: rgb(45, 100, 250);
   --c-shade: rgb(109, 102, 95);
-  --c-event-upcoming: rgb(231, 236, 243);
-  --c-event-past: rgb(247, 244, 239);
+  --c-featured: rgb(255, 239, 22);
 }
 
 [data-colour="light-muted"] {
+  --c-featured: rgb(255, 255, 255);
   --c-background: rgb(247, 232, 213);
   --c-background-shade: rgb(233, 217, 197);
   --c-shadow: rgba(0, 0, 0, 0.13);  
