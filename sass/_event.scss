@@ -44,9 +44,6 @@
     @extend %copy--small;
     display: block;
     margin-bottom: 0.1em;
-    span {
-      margin-right: 1em;
-    }
   }
 }
 .event__header {
@@ -114,9 +111,6 @@
   .datum__content {
     font-weight: 500;
     font-size: var(--ms-0);
-    span {
-      display: block;
-    }
   }
 }
 

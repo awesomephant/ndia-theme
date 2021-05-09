@@ -1,10 +1,9 @@
 .card {
-  border: 2px solid var(--c-stroke);
   border-radius: $border-radius;
   font-size: var(--ms-0);
+  border: 1px solid var(--c-stroke);
   padding: 1.2em;
   display: inline-block;
-  box-shadow: 4px 4px 0px 0px var(--c-stroke);
   [data-spacing="compact"] & {
     padding: 1em;
     padding-bottom: 0.8em;
@@ -18,7 +17,8 @@
   }
 }
 
-.card--featured {
+.card.card--featured {
+  padding: 1.5em;
   background: var(--c-featured);
 }
 
