@@ -155,6 +155,7 @@ class NDIASite extends Timber\Site
 	public function add_to_twig($twig)
 	{
 		$twig->addExtension(new Twig\Extension\StringLoaderExtension());
+		// $twig->addExtension(new Twig\Extra\String\StringExtension);
 		return $twig;
 	}
 }

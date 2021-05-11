@@ -10,7 +10,7 @@
 	{% set term = TimberTerm(t)%}
 	{% set items = term.posts(-1)%}
 	{% if items | length > 0 %}
-	<details class="resource__group">
+	<details class="resource__group" open>
 		<summary class="summary">
 			<h3 class="group__title">
 				{{t.name}} ({{term.posts | length}})
@@ -23,7 +23,15 @@
 					{{r.title}}
 				</h4>
 				<p class="resource__description">
-					{{r.description}}
+					{% set words = r.description | split(" ") %}
+					{% set l = words | length %}
+					{% set target_length = 45 %}
+					{% if l > target_length %}
+					<span class="description__opening">{{words[:target_length] | join(" ")}}</span> <span class="description__rest">{{words[target_length:] | join(" ")}}</span>
+					<button class="description__toggle button--small">Show more</button>
+					{% else %}
+					{{r.description }}
+					{% endif %}
 				</p>
 				<a href="{{r.resource_url}}" class="resource__link">
 					{{r.resource_url | replace({"https://": "", "http://": ""})}}

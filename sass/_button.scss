@@ -25,6 +25,16 @@
   background: var(--c-text);
   font-weight: 400;
 }
+.button--small {
+  @extend .button;
+  box-shadow: none;
+  display: inline;
+  padding: .11em .5em;
+  padding-top: .25em;
+  vertical-align: top;
+  line-height: 1;
+  font-size: var(--ms--1);
+}
 
 .button--tooltip {
   position: relative;

@@ -8,5 +8,19 @@ window.addEventListener("DOMContentLoaded", () => {
   initTools();
   initTooltips()
   markAbbreviations()
+  const descriptionToggles = document.querySelectorAll(".description__toggle")
+  descriptionToggles.forEach(t => {
+    t.addEventListener("click", e => {
+      console.log(t.parentElement)
+      let rest = t.parentElement
+      if (rest.classList.contains("active")){
+        rest.classList.remove("active")
+        t.innerText = "Show more"
+      } else {
+        rest.classList.add("active")
+        t.innerText = "Show less"
+      }
+    })
+  })
   textBalancer.balanceText('.event__title, h2, h3, h4');
 });
