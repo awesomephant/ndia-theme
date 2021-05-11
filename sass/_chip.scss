@@ -1,10 +1,6 @@
 .chip {
-  background: var(--c-stroke--featured);
-  color: var(--c-background);
   display: inline-block;
-  padding: .2em .6em;
-  padding-top: .35em;
-  border-radius: 3px;
   font-size: var(--ms--1);
   letter-spacing: .01em;
+  font-weight: 600;
 }

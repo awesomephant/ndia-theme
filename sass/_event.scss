@@ -40,10 +40,16 @@
   p {
     @extend %copy;
   }
+  h3 {
+    margin-bottom: .2em;
+    @include bp(m){
+      margin-bottom: .1em;
+    }
+  }
   .event__date {
     @extend %copy--small;
     display: block;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.4em;
   }
 }
 .event__header {

@@ -16,19 +16,30 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{theme.link}}/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{theme.link}}/assets/favicon-16x16.png">
-
-    <meta property="og:title" content="{{post.title | e("html_attr")}} / {{site.title | e("html_attr")}}">
-    <meta property="og:description" content="{% if post.short_description %}{{post.short_description | e("html_attr")}}{% else %}{{site.description | e("html_attr")}}{% endif %}">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{post.title | e("html_attr")}} — {{site.title | e("html_attr")}}">
+    <meta property="og:title" content="{{post.title | e("html_attr")}} — {{site.title | e("html_attr")}}">
     <meta property="og:url" content="{{site.url}}">
-
-    {% if post.thumbnail %}
-    <meta property="og:image" content="{{post.thumbnail | resize(1200)}}">
-    <meta name="twitter:image" content="{{post.thumbnail | resize(1200)}}">
+    
+    {% if post.short_description %}
+        <meta property="og:description" content="{{post.short_description | e("html_attr")}}">
+        <meta name="twitter:description" content="{{post.short_description | e("html_attr")}}}}">
+    {% else %}
+        <meta name="twitter:description" content="{{site.description | e("html_attr")}}">
+        <meta property="og:description" content="{{site.description | e("html_attr")}}">
     {% endif %}
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:creator" content="">
+    {% if post.thumbnail %}
+        <meta property="og:image"  content="{{post.thumbnail | resize(500)}}">
+        <meta name="twitter:image" content="{{post.thumbnail | resize(500)}}">
+        <meta name="twitter:image:alt" content="{{post.thumbnail.alt | e("html_attr")}}">
+    {% else %}
+        <meta property="og:image"  content="{{options.default_card_image.url | resize(500)}}">
+        <meta name="twitter:image" content="{{options.default_card_image.url | resize(500)}}">
+        <meta name="twitter:image:alt" content="{{options.default_card_image.alt}}">
+    {% endif %}
+
 
     <style>
         @font-face {

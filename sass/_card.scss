@@ -18,7 +18,9 @@
 }
 
 .card.card--featured {
-  padding: 1.5em;
+  @include bp(m) {
+    padding: 1.5em;
+  }
   background: var(--c-featured);
 }
 
@@ -40,9 +42,12 @@
   display: flex;
   justify-content: space-between;
   flex-flow: column-reverse;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
+  @include bp(m) {
+    margin-bottom: 0.25em;
+  }
   .chip {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
   }
   @include bp(m) {
     flex-flow: row;

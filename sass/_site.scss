@@ -1,7 +1,7 @@
 .header {
   max-width: $column;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   font-size: var(--ms-0);
   @include bp(m) {
     margin-bottom: 4em;
@@ -32,15 +32,25 @@
   }
   .label {
     display: block;
-    font-size: var(--ms--1);
-    margin-bottom: 0.25em;
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 0.3em;
+    font-size: var(--ms-0);
+    @include bp(m) {
+      font-size: var(--ms--1);
+    }
   }
 }
 
 .header__title {
   font-weight: 500;
   max-width: 28rem;
-  margin-right: 1em;
+  font-size: var(--ms-2);
+  margin-bottom: .1em;
+  @include bp(m){
+    margin-right: 1em;
+    font-size: var(--ms-0);
+  }
   a {
     text-decoration: none;
     &:hover,
@@ -51,7 +61,10 @@
 }
 
 .site__logo {
-  width: 70%;
+  width: 100%;
+  @include bp(m){
+    width: 70%;
+  }
   margin-bottom: 0em;
   display: block;
   position: relative;
