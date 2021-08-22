@@ -6,5 +6,8 @@
 	<div class="page__main">
 		{{post.content}}
 	</div>
+	<aside class="page__footer">
+		Published {{post.date}}{% if post.date != post.modified_date%}, updated {{post.modified_date}}{% endif %}
+	</aside>
 </article>
 {% endblock %}
