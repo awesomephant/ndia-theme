@@ -10,7 +10,7 @@
 	{% set term = TimberTerm(t)%}
 	{% set items = term.posts(-1)%}
 	{% if items | length > 0 %}
-	<details class="resource__group" open>
+	<details class="resource__group">
 		<summary class="summary">
 			<h3 class="group__title">
 				{{t.name}} ({{term.posts | length}})
